@@ -29,7 +29,7 @@ function Home() {
     <div
       style={{
         minHeight: "100vh",
-        background: "var(--brand-cream)",
+        background: "#FFF9F0",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -46,7 +46,7 @@ function Home() {
             fontSize: "clamp(14px, 1.4vw, 18px)",
             letterSpacing: "0.22em",
             textTransform: "uppercase",
-            color: "var(--brand-orange)",
+            color: "#F26A21",
             fontWeight: 600,
           }}
         >
@@ -65,7 +65,7 @@ function Home() {
           }}
         >
           The digital backbone of{" "}
-          <span style={{ color: "var(--brand-orange)" }}>maternal care</span> in
+          <span style={{ color: "#F26A21" }}>maternal care</span> in
           Africa.
         </h1>
         <p
@@ -91,7 +91,7 @@ function Home() {
               gap: 12,
               padding: "18px 32px",
               borderRadius: 999,
-              background: "var(--brand-green)",
+              background: "#1F7A3A",
               color: "white",
               fontFamily: "var(--font-display)",
               fontWeight: 600,
@@ -112,12 +112,12 @@ function Home() {
               padding: "18px 32px",
               borderRadius: 999,
               background: "transparent",
-              color: "var(--brand-green-deep)",
+              color: "#145A2A",
               fontFamily: "var(--font-display)",
               fontWeight: 600,
               fontSize: 18,
               textDecoration: "none",
-              border: "2px solid var(--brand-green)",
+              border: "2px solid #1F7A3A",
             }}
           >
             <Printer size={18} /> Print / PDF view
@@ -150,6 +150,6 @@ const kbd: React.CSSProperties = {
   borderRadius: 4,
   fontFamily: "var(--font-display)",
   fontSize: 12,
-  color: "var(--brand-green-deep)",
+  color: "#145A2A",
   background: "white",
 };

@@ -39,10 +39,10 @@ export default function Slide13({ index, total }: { index: number; total: number
         }}
       >
         <div style={{ maxWidth: 1100 }}>
-          <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>2030 Vision</div>
+          <div className="slide-kicker" style={{ color: "#F26A21" }}>2030 Vision</div>
           <h1 className="slide-title-lg" style={{ marginTop: 32, color: "white" }}>
             The digital backbone of<br />
-            <span style={{ color: "var(--brand-orange)" }}>maternal care in Africa.</span>
+            <span style={{ color: "#F26A21" }}>maternal care in Africa.</span>
           </h1>
           <AccentBar width={110} className="mt-10" />
         </div>

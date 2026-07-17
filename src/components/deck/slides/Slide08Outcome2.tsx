@@ -27,10 +27,10 @@ export default function Slide08({ index, total }: { index: number; total: number
         className="slide-enter"
         style={{ position: "absolute", right: 120, top: 340, width: 900, zIndex: 10, textAlign: "right" }}
       >
-        <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>Built for Reality</div>
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>Built for Reality</div>
         <h1 className="slide-title-lg" style={{ marginTop: 40, color: "white" }}>
           Care continues —<br />
-          <span style={{ color: "var(--brand-orange)" }}>even without internet.</span>
+          <span style={{ color: "#F26A21" }}>even without internet.</span>
         </h1>
         <AccentBar width={110} className="ml-auto mt-10" />
         <p

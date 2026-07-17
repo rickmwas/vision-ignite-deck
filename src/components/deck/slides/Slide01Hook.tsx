@@ -30,7 +30,7 @@ export default function Slide01({ index, total }: { index: number; total: number
         }}
       />
       <div className="slide-enter" style={{ position: "absolute", left: 120, top: 340, width: 1000, zIndex: 10 }}>
-        <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>A True Story · Kilifi County</div>
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>A True Story · Kilifi County</div>
         <h1 className="slide-title-lg" style={{ marginTop: 40, color: "white", maxWidth: 960 }}>
           Somewhere in Kenya, a mother just missed her appointment.
         </h1>

@@ -16,9 +16,9 @@ export default function Slide10({ index, total }: { index: number; total: number
         className="slide-enter"
         style={{ position: "absolute", left: 120, top: 260, width: 800, zIndex: 10 }}
       >
-        <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>Market</div>
-        <h1 className="slide-title" style={{ marginTop: 32, color: "var(--brand-green-deep)" }}>
-          The opportunity is <span style={{ color: "var(--brand-orange)" }}>continental</span>.
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>Market</div>
+        <h1 className="slide-title" style={{ marginTop: 32, color: "#145A2A" }}>
+          The opportunity is <span style={{ color: "#F26A21" }}>continental</span>.
         </h1>
         <AccentBar width={110} className="mt-10" />
 
@@ -30,7 +30,7 @@ export default function Slide10({ index, total }: { index: number; total: number
                   width: 16,
                   height: 16,
                   borderRadius: 999,
-                  background: i === 0 ? "var(--brand-green)" : i === 1 ? "var(--brand-leaf)" : "var(--brand-orange)",
+                  background: i === 0 ? "#1F7A3A" : i === 1 ? "#8BC34A" : "#F26A21",
                   flexShrink: 0,
                   alignSelf: "center",
                 }}
@@ -38,7 +38,7 @@ export default function Slide10({ index, total }: { index: number; total: number
               <div style={{ flex: 1 }}>
                 <div
                   className="slide-body"
-                  style={{ fontWeight: 600, fontFamily: "var(--font-display)", color: "var(--brand-green-deep)" }}
+                  style={{ fontWeight: 600, fontFamily: "var(--font-display)", color: "#145A2A" }}
                 >
                   {row.label}
                 </div>
@@ -51,7 +51,7 @@ export default function Slide10({ index, total }: { index: number; total: number
                   fontFamily: "var(--font-display)",
                   fontSize: 60,
                   fontWeight: 700,
-                  color: "var(--brand-green-deep)",
+                  color: "#145A2A",
                   letterSpacing: "-0.03em",
                 }}
               >
@@ -64,9 +64,9 @@ export default function Slide10({ index, total }: { index: number; total: number
 
       {/* Concentric circles */}
       <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, zIndex: 5 }}>
-        <circle cx={cx} cy={cy} r={340} fill="var(--brand-green)" fillOpacity="0.10" stroke="var(--brand-green)" strokeOpacity="0.4" strokeWidth={2} />
-        <circle cx={cx} cy={cy} r={220} fill="var(--brand-leaf)" fillOpacity="0.18" stroke="var(--brand-leaf)" strokeOpacity="0.6" strokeWidth={2} />
-        <circle cx={cx} cy={cy} r={110} fill="var(--brand-orange)" fillOpacity="0.9" />
+        <circle cx={cx} cy={cy} r={340} fill="#1F7A3A" fillOpacity="0.10" stroke="#1F7A3A" strokeOpacity="0.4" strokeWidth={2} />
+        <circle cx={cx} cy={cy} r={220} fill="#8BC34A" fillOpacity="0.18" stroke="#8BC34A" strokeOpacity="0.6" strokeWidth={2} />
+        <circle cx={cx} cy={cy} r={110} fill="#F26A21" fillOpacity="0.9" />
         <text x={cx} y={cy - 4} textAnchor="middle" fill="white" fontFamily="var(--font-display)" fontWeight={700} fontSize={30}>
           SOM
         </text>
@@ -74,10 +74,10 @@ export default function Slide10({ index, total }: { index: number; total: number
           Kenya · 5 yr
         </text>
 
-        <text x={cx} y={cy - 190} textAnchor="middle" fill="var(--brand-leaf)" fontFamily="var(--font-display)" fontWeight={700} fontSize={26}>
+        <text x={cx} y={cy - 190} textAnchor="middle" fill="#8BC34A" fontFamily="var(--font-display)" fontWeight={700} fontSize={26}>
           SAM
         </text>
-        <text x={cx} y={cy - 310} textAnchor="middle" fill="var(--brand-green)" fontFamily="var(--font-display)" fontWeight={700} fontSize={26}>
+        <text x={cx} y={cy - 310} textAnchor="middle" fill="#1F7A3A" fontFamily="var(--font-display)" fontWeight={700} fontSize={26}>
           TAM
         </text>
       </svg>

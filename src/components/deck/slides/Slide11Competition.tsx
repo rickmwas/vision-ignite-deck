@@ -31,10 +31,10 @@ export default function Slide11({ index, total }: { index: number; total: number
         className="slide-enter"
         style={{ position: "absolute", top: 130, left: 120, right: 120, zIndex: 10 }}
       >
-        <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>The Difference</div>
-        <h1 className="slide-title" style={{ marginTop: 32, color: "var(--brand-green-deep)", maxWidth: 1400 }}>
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>The Difference</div>
+        <h1 className="slide-title" style={{ marginTop: 32, color: "#145A2A", maxWidth: 1400 }}>
           Others solve pieces.{" "}
-          <span style={{ color: "var(--brand-orange)" }}>TotoAfya connects them.</span>
+          <span style={{ color: "#F26A21" }}>TotoAfya connects them.</span>
         </h1>
         <AccentBar width={110} className="mt-10" />
       </div>
@@ -46,7 +46,7 @@ export default function Slide11({ index, total }: { index: number; total: number
         </text>
         {scattered.map((n, i) => (
           <g key={i}>
-            <circle cx={n.x + 470} cy={n.y + 200} r={16} fill="var(--brand-ink)" opacity={0.5} />
+            <circle cx={n.x + 470} cy={n.y + 200} r={16} fill="#1A1A1A" opacity={0.5} />
             <text x={n.x + 500} y={n.y + 208} fill="rgba(26,26,26,0.6)" fontFamily="var(--font-sans)" fontSize={20}>
               {n.label}
             </text>
@@ -54,7 +54,7 @@ export default function Slide11({ index, total }: { index: number; total: number
         ))}
 
         {/* RIGHT: connected mesh */}
-        <text x={cx} y={200} textAnchor="middle" fill="var(--brand-green)" fontFamily="var(--font-display)" fontWeight={700} fontSize={22} letterSpacing="0.2em">
+        <text x={cx} y={200} textAnchor="middle" fill="#1F7A3A" fontFamily="var(--font-display)" fontWeight={700} fontSize={22} letterSpacing="0.2em">
           WITH TOTOAFYA
         </text>
         {/* mesh lines */}
@@ -66,22 +66,22 @@ export default function Slide11({ index, total }: { index: number; total: number
               y1={n.y}
               x2={m.x}
               y2={m.y}
-              stroke="var(--brand-green)"
+              stroke="#1F7A3A"
               strokeOpacity="0.35"
               strokeWidth={2}
             />
           )),
         )}
         {/* central hub */}
-        <circle cx={cx} cy={cy} r={54} fill="var(--brand-orange)" />
+        <circle cx={cx} cy={cy} r={54} fill="#F26A21" />
         <text x={cx} y={cy + 8} textAnchor="middle" fill="white" fontFamily="var(--font-display)" fontWeight={700} fontSize={22}>
           TotoAfya
         </text>
         {connected.map((n, i) => (
-          <line key={`hub-${i}`} x1={cx} y1={cy} x2={n.x} y2={n.y} stroke="var(--brand-green)" strokeWidth={2.5} />
+          <line key={`hub-${i}`} x1={cx} y1={cy} x2={n.x} y2={n.y} stroke="#1F7A3A" strokeWidth={2.5} />
         ))}
         {connected.map((n, i) => (
-          <circle key={`node-${i}`} cx={n.x} cy={n.y} r={18} fill="var(--brand-green)" />
+          <circle key={`node-${i}`} cx={n.x} cy={n.y} r={18} fill="#1F7A3A" />
         ))}
       </svg>
     </SlideLayout>

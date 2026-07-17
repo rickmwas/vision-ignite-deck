@@ -22,7 +22,7 @@ export default function Slide02({ index, total }: { index: number; total: number
           textAlign: "center",
         }}
       >
-        <div className="slide-kicker" style={{ color: "var(--brand-green)" }}>
+        <div className="slide-kicker" style={{ color: "#1F7A3A" }}>
           Sub-Saharan Africa · Lifetime Risk
         </div>
         <div
@@ -33,18 +33,18 @@ export default function Slide02({ index, total }: { index: number; total: number
             lineHeight: 0.85,
             fontWeight: 800,
             letterSpacing: "-0.07em",
-            color: "var(--brand-green)",
+            color: "#1F7A3A",
             display: "flex",
             alignItems: "baseline",
             gap: 32,
           }}
         >
           <span>1</span>
-          <span style={{ fontSize: 200, color: "var(--brand-ink)", opacity: 0.35 }}>in</span>
-          <span style={{ color: "var(--brand-orange)" }}>39</span>
+          <span style={{ fontSize: 200, color: "#1A1A1A", opacity: 0.35 }}>in</span>
+          <span style={{ color: "#F26A21" }}>39</span>
         </div>
         <AccentBar width={160} className="mt-12" />
-        <p className="slide-body-lg" style={{ marginTop: 48, maxWidth: 1000, color: "var(--brand-ink)" }}>
+        <p className="slide-body-lg" style={{ marginTop: 48, maxWidth: 1000, color: "#1A1A1A" }}>
           Mothers in Sub-Saharan Africa face a lifetime risk of dying from
           pregnancy or childbirth.
         </p>

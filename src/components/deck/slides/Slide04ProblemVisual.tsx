@@ -38,10 +38,10 @@ export default function Slide04({ index, total }: { index: number; total: number
         }}
       >
         <div style={{ maxWidth: 900 }}>
-          <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>The Reality</div>
+          <div className="slide-kicker" style={{ color: "#F26A21" }}>The Reality</div>
           <h1 className="slide-title" style={{ marginTop: 32, color: "white" }}>
             Three people. One mother.<br />
-            <span style={{ color: "var(--brand-orange)" }}>Zero shared record.</span>
+            <span style={{ color: "#F26A21" }}>Zero shared record.</span>
           </h1>
         </div>
         <div

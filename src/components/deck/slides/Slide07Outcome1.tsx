@@ -21,10 +21,10 @@ export default function Slide07({ index, total }: { index: number; total: number
             padding: "0 120px 0 140px",
           }}
         >
-          <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>Outcome · Not Feature</div>
+          <div className="slide-kicker" style={{ color: "#F26A21" }}>Outcome · Not Feature</div>
           <h1
             className="slide-title-lg"
-            style={{ marginTop: 40, color: "var(--brand-green-deep)", maxWidth: 720 }}
+            style={{ marginTop: 40, color: "#145A2A", maxWidth: 720 }}
           >
             A mother never<br />
             misses critical care.

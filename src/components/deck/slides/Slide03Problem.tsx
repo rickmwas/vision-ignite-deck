@@ -28,8 +28,8 @@ export default function Slide03({ index, total }: { index: number; total: number
             padding: "0 140px",
           }}
         >
-          <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>The Problem</div>
-          <h1 className="slide-title-lg" style={{ marginTop: 40, color: "var(--brand-green-deep)" }}>
+          <div className="slide-kicker" style={{ color: "#F26A21" }}>The Problem</div>
+          <h1 className="slide-title-lg" style={{ marginTop: 40, color: "#145A2A" }}>
             Care is<br />fragmented.
           </h1>
           <AccentBar width={120} className="mt-10" />

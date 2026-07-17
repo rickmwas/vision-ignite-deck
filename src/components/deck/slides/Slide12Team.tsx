@@ -14,7 +14,7 @@ function Portrait({ initials }: { initials: string }) {
         width: 260,
         height: 260,
         borderRadius: 999,
-        background: "linear-gradient(145deg, var(--brand-green) 0%, var(--brand-leaf) 100%)",
+        background: "linear-gradient(145deg, #1F7A3A 0%, #8BC34A 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -36,9 +36,9 @@ export default function Slide12({ index, total }: { index: number; total: number
   return (
     <SlideLayout index={index} total={total} tone="cream">
       <div className="slide-enter" style={{ position: "absolute", top: 180, left: 120, right: 120, zIndex: 10 }}>
-        <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>The Team</div>
-        <h1 className="slide-title" style={{ marginTop: 32, color: "var(--brand-green-deep)" }}>
-          Built by people who've <span style={{ color: "var(--brand-orange)" }}>lived this</span>.
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>The Team</div>
+        <h1 className="slide-title" style={{ marginTop: 32, color: "#145A2A" }}>
+          Built by people who've <span style={{ color: "#F26A21" }}>lived this</span>.
         </h1>
         <AccentBar width={110} className="mt-10" />
       </div>
@@ -63,14 +63,14 @@ export default function Slide12({ index, total }: { index: number; total: number
             </div>
             <div
               className="slide-subtitle"
-              style={{ marginTop: 32, color: "var(--brand-green-deep)", fontSize: 40 }}
+              style={{ marginTop: 32, color: "#145A2A", fontSize: 40 }}
             >
               {m.name}
             </div>
             <div
               style={{
                 marginTop: 8,
-                color: "var(--brand-orange)",
+                color: "#F26A21",
                 fontFamily: "var(--font-display)",
                 fontWeight: 600,
                 fontSize: 22,

@@ -9,10 +9,10 @@ export const meta = {
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div style={{ flex: 1, borderTop: "3px solid var(--brand-green)", paddingTop: 40 }}>
+    <div style={{ flex: 1, borderTop: "3px solid #1F7A3A", paddingTop: 40 }}>
       <div
         className="slide-title-lg"
-        style={{ color: "var(--brand-orange)", fontSize: 160, fontWeight: 700, letterSpacing: "-0.05em" }}
+        style={{ color: "#F26A21", fontSize: 160, fontWeight: 700, letterSpacing: "-0.05em" }}
       >
         {value}
       </div>
@@ -24,7 +24,7 @@ function Stat({ value, label }: { value: string; label: string }) {
           fontSize: 26,
           letterSpacing: "0.15em",
           textTransform: "uppercase",
-          color: "var(--brand-green-deep)",
+          color: "#145A2A",
         }}
       >
         {label}
@@ -37,8 +37,8 @@ export default function Slide09({ index, total }: { index: number; total: number
   return (
     <SlideLayout index={index} total={total} tone="cream">
       <div className="slide-enter" style={{ position: "absolute", top: 200, left: 120, width: 1200, zIndex: 10 }}>
-        <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>Where We Are Today</div>
-        <h1 className="slide-title-lg" style={{ marginTop: 32, color: "var(--brand-green-deep)" }}>
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>Where We Are Today</div>
+        <h1 className="slide-title-lg" style={{ marginTop: 32, color: "#145A2A" }}>
           Real people. Real care. Real proof.
         </h1>
         <AccentBar width={110} className="mt-10" />

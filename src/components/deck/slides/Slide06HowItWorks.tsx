@@ -24,10 +24,10 @@ export default function Slide06({ index, total }: { index: number; total: number
         className="slide-enter"
         style={{ position: "absolute", top: 180, left: 120, width: 1000, zIndex: 10 }}
       >
-        <div className="slide-kicker" style={{ color: "var(--brand-orange)" }}>How it Works</div>
-        <h1 className="slide-title" style={{ marginTop: 32, color: "var(--brand-green-deep)", maxWidth: 900 }}>
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>How it Works</div>
+        <h1 className="slide-title" style={{ marginTop: 32, color: "#145A2A", maxWidth: 900 }}>
           One record.<br />
-          <span style={{ color: "var(--brand-orange)" }}>Every step</span> of the journey.
+          <span style={{ color: "#F26A21" }}>Every step</span> of the journey.
         </h1>
         <AccentBar width={110} className="mt-10" />
       </div>
@@ -40,7 +40,7 @@ export default function Slide06({ index, total }: { index: number; total: number
         viewBox="0 0 1920 1080"
       >
         {/* Orbit circle */}
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="var(--brand-green)" strokeOpacity="0.2" strokeWidth={2} strokeDasharray="6 10" />
+        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1F7A3A" strokeOpacity="0.2" strokeWidth={2} strokeDasharray="6 10" />
 
         {/* Connection lines */}
         {NODES.map((n, i) => {
@@ -54,7 +54,7 @@ export default function Slide06({ index, total }: { index: number; total: number
               y1={cy}
               x2={x}
               y2={y}
-              stroke="var(--brand-green)"
+              stroke="#1F7A3A"
               strokeOpacity="0.35"
               strokeWidth={2}
             />
@@ -62,8 +62,8 @@ export default function Slide06({ index, total }: { index: number; total: number
         })}
 
         {/* Center hub */}
-        <circle cx={cx} cy={cy} r={130} fill="var(--brand-green)" />
-        <circle cx={cx} cy={cy} r={130} fill="none" stroke="var(--brand-orange)" strokeWidth={3} strokeOpacity="0.9" />
+        <circle cx={cx} cy={cy} r={130} fill="#1F7A3A" />
+        <circle cx={cx} cy={cy} r={130} fill="none" stroke="#F26A21" strokeWidth={3} strokeOpacity="0.9" />
         <text
           x={cx}
           y={cy - 8}
@@ -95,13 +95,13 @@ export default function Slide06({ index, total }: { index: number; total: number
           const y = cy + Math.sin(a) * r;
           return (
             <g key={`n-${i}`}>
-              <circle cx={x} cy={y} r={70} fill="white" stroke="var(--brand-green)" strokeWidth={3} />
-              <circle cx={x} cy={y} r={70} fill="none" stroke="var(--brand-orange)" strokeWidth={4} strokeOpacity="0" />
+              <circle cx={x} cy={y} r={70} fill="white" stroke="#1F7A3A" strokeWidth={3} />
+              <circle cx={x} cy={y} r={70} fill="none" stroke="#F26A21" strokeWidth={4} strokeOpacity="0" />
               <text
                 x={x}
                 y={y - 4}
                 textAnchor="middle"
-                fill="var(--brand-green-deep)"
+                fill="#145A2A"
                 fontFamily="var(--font-display)"
                 fontWeight={700}
                 fontSize={28}

@@ -107,7 +107,7 @@ export function AccentBar({ width = 96, className = "" }: { width?: number; clas
   return (
     <div
       className={className}
-      style={{ width, height: 6, background: "var(--brand-orange)", borderRadius: 3 }}
+      style={{ width, height: 6, background: "#F26A21", borderRadius: 3 }}
     />
   );
 }
