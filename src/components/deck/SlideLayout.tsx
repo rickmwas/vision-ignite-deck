@@ -26,17 +26,18 @@ export function SlideLayout({
     tone === "dark"
       ? "#0E1A12"
       : tone === "brand"
-        ? "var(--brand-green)"
+        ? "#1F7A3A"
         : tone === "cream"
-          ? "var(--brand-cream)"
+          ? "#FFF9F0"
           : "#FFFFFF";
+  const fg = tone === "dark" || tone === "brand" ? "#FFFFFF" : "#1A1A1A";
   const logoVariant = tone === "dark" || tone === "brand" ? "knockout" : "full";
   const chromeColor = tone === "dark" || tone === "brand" ? "rgba(255,255,255,0.65)" : "rgba(26,26,26,0.55)";
 
   return (
     <div
       className={`slide-content ${className}`}
-      style={{ backgroundColor: bg, color: tone === "dark" || tone === "brand" ? "#FFFFFF" : "var(--brand-ink)" }}
+      style={{ backgroundColor: bg, color: fg }}
     >
       {children}
 
