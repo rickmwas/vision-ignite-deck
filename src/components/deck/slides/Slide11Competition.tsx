@@ -41,20 +41,20 @@ export default function Slide11({ index, total }: { index: number; total: number
 
       <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, zIndex: 5 }}>
         {/* LEFT: scattered */}
-        <text x={430} y={200} textAnchor="middle" fill="rgba(26,26,26,0.5)" fontFamily="var(--font-display)" fontWeight={600} fontSize={22} letterSpacing="0.2em">
+        <text x={430} y={200} textAnchor="middle" fill="rgba(26,26,26,0.5)" fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif" fontWeight={600} fontSize={22} letterSpacing="0.2em">
           TODAY
         </text>
         {scattered.map((n, i) => (
           <g key={i}>
             <circle cx={n.x + 470} cy={n.y + 200} r={16} fill="#1A1A1A" opacity={0.5} />
-            <text x={n.x + 500} y={n.y + 208} fill="rgba(26,26,26,0.6)" fontFamily="var(--font-sans)" fontSize={20}>
+            <text x={n.x + 500} y={n.y + 208} fill="rgba(26,26,26,0.6)" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif" fontSize={20}>
               {n.label}
             </text>
           </g>
         ))}
 
         {/* RIGHT: connected mesh */}
-        <text x={cx} y={200} textAnchor="middle" fill="#1F7A3A" fontFamily="var(--font-display)" fontWeight={700} fontSize={22} letterSpacing="0.2em">
+        <text x={cx} y={200} textAnchor="middle" fill="#1F7A3A" fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif" fontWeight={700} fontSize={22} letterSpacing="0.2em">
           WITH TOTOAFYA
         </text>
         {/* mesh lines */}
@@ -74,7 +74,7 @@ export default function Slide11({ index, total }: { index: number; total: number
         )}
         {/* central hub */}
         <circle cx={cx} cy={cy} r={54} fill="#F26A21" />
-        <text x={cx} y={cy + 8} textAnchor="middle" fill="white" fontFamily="var(--font-display)" fontWeight={700} fontSize={22}>
+        <text x={cx} y={cy + 8} textAnchor="middle" fill="white" fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif" fontWeight={700} fontSize={22}>
           TotoAfya
         </text>
         {connected.map((n, i) => (

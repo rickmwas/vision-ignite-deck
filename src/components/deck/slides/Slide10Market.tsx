@@ -38,7 +38,7 @@ export default function Slide10({ index, total }: { index: number; total: number
               <div style={{ flex: 1 }}>
                 <div
                   className="slide-body"
-                  style={{ fontWeight: 600, fontFamily: "var(--font-display)", color: "#145A2A" }}
+                  style={{ fontWeight: 600, fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif", color: "#145A2A" }}
                 >
                   {row.label}
                 </div>
@@ -48,7 +48,7 @@ export default function Slide10({ index, total }: { index: number; total: number
               </div>
               <div
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
                   fontSize: 60,
                   fontWeight: 700,
                   color: "#145A2A",
@@ -67,17 +67,17 @@ export default function Slide10({ index, total }: { index: number; total: number
         <circle cx={cx} cy={cy} r={340} fill="#1F7A3A" fillOpacity="0.10" stroke="#1F7A3A" strokeOpacity="0.4" strokeWidth={2} />
         <circle cx={cx} cy={cy} r={220} fill="#8BC34A" fillOpacity="0.18" stroke="#8BC34A" strokeOpacity="0.6" strokeWidth={2} />
         <circle cx={cx} cy={cy} r={110} fill="#F26A21" fillOpacity="0.9" />
-        <text x={cx} y={cy - 4} textAnchor="middle" fill="white" fontFamily="var(--font-display)" fontWeight={700} fontSize={30}>
+        <text x={cx} y={cy - 4} textAnchor="middle" fill="white" fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif" fontWeight={700} fontSize={30}>
           SOM
         </text>
-        <text x={cx} y={cy + 28} textAnchor="middle" fill="rgba(255,255,255,0.85)" fontFamily="var(--font-sans)" fontSize={18}>
+        <text x={cx} y={cy + 28} textAnchor="middle" fill="rgba(255,255,255,0.85)" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif" fontSize={18}>
           Kenya · 5 yr
         </text>
 
-        <text x={cx} y={cy - 190} textAnchor="middle" fill="#8BC34A" fontFamily="var(--font-display)" fontWeight={700} fontSize={26}>
+        <text x={cx} y={cy - 190} textAnchor="middle" fill="#8BC34A" fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif" fontWeight={700} fontSize={26}>
           SAM
         </text>
-        <text x={cx} y={cy - 310} textAnchor="middle" fill="#1F7A3A" fontFamily="var(--font-display)" fontWeight={700} fontSize={26}>
+        <text x={cx} y={cy - 310} textAnchor="middle" fill="#1F7A3A" fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif" fontWeight={700} fontSize={26}>
           TAM
         </text>
       </svg>

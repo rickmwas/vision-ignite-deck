@@ -18,7 +18,7 @@ function Portrait({ initials }: { initials: string }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        fontFamily: "var(--font-display)",
+        fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
         fontWeight: 700,
         fontSize: 96,
         color: "white",
@@ -71,7 +71,7 @@ export default function Slide12({ index, total }: { index: number; total: number
               style={{
                 marginTop: 8,
                 color: "#F26A21",
-                fontFamily: "var(--font-display)",
+                fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
                 fontWeight: 600,
                 fontSize: 22,
                 letterSpacing: "0.15em",

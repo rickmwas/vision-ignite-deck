@@ -42,7 +42,7 @@ function Home() {
         <div
           style={{
             marginTop: 60,
-            fontFamily: "var(--font-display)",
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
             fontSize: "clamp(14px, 1.4vw, 18px)",
             letterSpacing: "0.22em",
             textTransform: "uppercase",
@@ -55,7 +55,7 @@ function Home() {
         <h1
           style={{
             marginTop: 24,
-            fontFamily: "var(--font-display)",
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
             fontSize: "clamp(48px, 7vw, 108px)",
             lineHeight: 0.98,
             letterSpacing: "-0.045em",
@@ -93,7 +93,7 @@ function Home() {
               borderRadius: 999,
               background: "#1F7A3A",
               color: "white",
-              fontFamily: "var(--font-display)",
+              fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
               fontWeight: 600,
               fontSize: 18,
               textDecoration: "none",
@@ -113,7 +113,7 @@ function Home() {
               borderRadius: 999,
               background: "transparent",
               color: "#145A2A",
-              fontFamily: "var(--font-display)",
+              fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
               fontWeight: 600,
               fontSize: 18,
               textDecoration: "none",
@@ -148,7 +148,7 @@ const kbd: React.CSSProperties = {
   border: "1px solid rgba(26,26,26,0.2)",
   borderBottomWidth: 2,
   borderRadius: 4,
-  fontFamily: "var(--font-display)",
+  fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
   fontSize: 12,
   color: "#145A2A",
   background: "white",

@@ -69,7 +69,7 @@ export default function Slide06({ index, total }: { index: number; total: number
           y={cy - 8}
           textAnchor="middle"
           fill="white"
-          fontFamily="var(--font-display)"
+          fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif"
           fontWeight={700}
           fontSize={38}
           letterSpacing="-0.02em"
@@ -81,7 +81,7 @@ export default function Slide06({ index, total }: { index: number; total: number
           y={cy + 36}
           textAnchor="middle"
           fill="rgba(255,255,255,0.75)"
-          fontFamily="var(--font-display)"
+          fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif"
           fontSize={20}
           letterSpacing="0.15em"
         >
@@ -102,7 +102,7 @@ export default function Slide06({ index, total }: { index: number; total: number
                 y={y - 4}
                 textAnchor="middle"
                 fill="#145A2A"
-                fontFamily="var(--font-display)"
+                fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif"
                 fontWeight={700}
                 fontSize={28}
               >
@@ -113,7 +113,7 @@ export default function Slide06({ index, total }: { index: number; total: number
                 y={y + 28}
                 textAnchor="middle"
                 fill="rgba(26,26,26,0.6)"
-                fontFamily="var(--font-sans)"
+                fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
                 fontSize={18}
               >
                 {n.sub}

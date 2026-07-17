@@ -50,7 +50,7 @@ export default function Slide04({ index, total }: { index: number; total: number
             display: "flex",
             gap: 48,
             color: "rgba(255,255,255,0.82)",
-            fontFamily: "var(--font-display)",
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
             fontWeight: 500,
             letterSpacing: "0.05em",
             textTransform: "uppercase",

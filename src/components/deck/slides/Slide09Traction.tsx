@@ -19,7 +19,7 @@ function Stat({ value, label }: { value: string; label: string }) {
       <div
         style={{
           marginTop: 24,
-          fontFamily: "var(--font-display)",
+          fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
           fontWeight: 500,
           fontSize: 26,
           letterSpacing: "0.15em",
