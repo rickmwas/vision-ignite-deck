@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import Slide01, { meta as m01 } from "./slides/Slide01Hook";
 import Slide02, { meta as m02 } from "./slides/Slide02Stat";
 import Slide03, { meta as m03 } from "./slides/Slide03Problem";
@@ -19,7 +20,7 @@ export type SlideMeta = {
 };
 
 export type SlideEntry = {
-  Component: (props: { index: number; total: number }) => JSX.Element;
+  Component: (props: { index: number; total: number }) => ReactElement;
   meta: SlideMeta;
 };
 
