@@ -78,12 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "TotoAfya Digital — Investor Pitch" },
-      { name: "description", content: "The digital backbone of maternal care in Africa." },
+      { name: "description", content: "TotoAfya Digital: an offline-first maternal and child healthcare ecosystem connecting mothers, CHVs, nurses, and facilities into one continuous care journey." },
       { name: "author", content: "TotoAfya Digital" },
       { property: "og:title", content: "TotoAfya Digital — Investor Pitch" },
-      { property: "og:description", content: "The digital backbone of maternal care in Africa." },
+      { property: "og:description", content: "TotoAfya Digital: an offline-first maternal and child healthcare ecosystem connecting mothers, CHVs, nurses, and facilities into one continuous care journey." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "TotoAfya Digital — Investor Pitch" },
+      { name: "twitter:description", content: "TotoAfya Digital: an offline-first maternal and child healthcare ecosystem connecting mothers, CHVs, nurses, and facilities into one continuous care journey." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0d1cdea-8aba-4c85-9f1b-d8c29ac21aef/id-preview-811a498d--289d6f14-391e-49c8-b815-4ee44cd2eb66.lovable.app-1784317456918.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b0d1cdea-8aba-4c85-9f1b-d8c29ac21aef/id-preview-811a498d--289d6f14-391e-49c8-b815-4ee44cd2eb66.lovable.app-1784317456918.png" },
     ],
     links: [
       {

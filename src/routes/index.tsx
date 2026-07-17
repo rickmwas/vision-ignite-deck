@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "The digital backbone of maternal care in Africa. Investor pitch deck.",
+          "TotoAfya Digital: an offline-first maternal and child healthcare ecosystem connecting mothers, CHVs, nurses, and facilities into one continuous care journey.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
