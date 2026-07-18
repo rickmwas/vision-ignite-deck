@@ -1,8 +1,9 @@
 import { createFileRoute, useNavigate, useSearch } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { z } from "zod";
-import { ChevronLeft, ChevronRight, Maximize2, StickyNote, Printer } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2, StickyNote, Printer, FileDown } from "lucide-react";
 import { slides } from "@/components/deck/slideRegistry";
+import { exportToPptx, type ExportProgress } from "@/lib/exportPptx";
 
 const searchSchema = z.object({
   slide: z.coerce.number().int().min(1).catch(1),
@@ -28,6 +29,16 @@ function DeckRoute() {
   const idx = Math.max(0, Math.min(total - 1, slide - 1));
   const [showNotes, setShowNotes] = useState(false);
   const [scale, setScale] = useState(1);
+  const [pptxProgress, setPptxProgress] = useState<ExportProgress | null>(null);
+
+  const handleExportPptx = async () => {
+    if (pptxProgress) return;
+    try {
+      await exportToPptx((p) => setPptxProgress(p));
+    } finally {
+      setPptxProgress(null);
+    }
+  };
 
   useEffect(() => {
     function computeScale() {
@@ -132,6 +143,19 @@ function DeckRoute() {
         >
           <Printer size={18} />
         </ToolbarButton>
+        <ToolbarButton
+          onClick={handleExportPptx}
+          title="Export PPTX"
+          disabled={!!pptxProgress}
+        >
+          {pptxProgress ? (
+            <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: 0, minWidth: 28, textAlign: "center" }}>
+              {pptxProgress.done}/{pptxProgress.total}
+            </span>
+          ) : (
+            <FileDown size={18} />
+          )}
+        </ToolbarButton>
       </div>
 
       {/* Speaker notes overlay */}
@@ -199,27 +223,32 @@ function ToolbarButton({
   children,
   onClick,
   title,
+  disabled,
 }: {
   children: React.ReactNode;
   onClick: () => void;
   title: string;
+  disabled?: boolean;
 }) {
   return (
     <button
       onClick={onClick}
       title={title}
+      disabled={disabled}
       style={{
         width: 40,
         height: 40,
         borderRadius: 10,
-        background: "rgba(255,255,255,0.10)",
+        background: disabled ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.10)",
         border: "1px solid rgba(255,255,255,0.15)",
         color: "white",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        cursor: "pointer",
+        cursor: disabled ? "default" : "pointer",
         backdropFilter: "blur(8px)",
+        opacity: disabled ? 0.75 : 1,
+        transition: "opacity 200ms",
       }}
     >
       {children}
