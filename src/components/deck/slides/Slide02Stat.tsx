@@ -28,22 +28,22 @@ export default function Slide02({ index, total }: { index: number; total: number
         <div
           className="slide-title-xl"
           style={{
-            marginTop: 40,
-            fontSize: 340,
-            lineHeight: 0.85,
+            marginTop: 28,
+            fontSize: 220,
+            lineHeight: 0.9,
             fontWeight: 800,
-            letterSpacing: "-0.07em",
+            letterSpacing: "-0.06em",
             color: "#1F7A3A",
             display: "flex",
             alignItems: "baseline",
-            gap: 32,
+            gap: 24,
           }}
         >
           <span>1</span>
-          <span style={{ fontSize: 200, color: "#1A1A1A", opacity: 0.35 }}>in</span>
+          <span style={{ fontSize: 130, color: "#1A1A1A", opacity: 0.35 }}>in</span>
           <span style={{ color: "#F26A21" }}>39</span>
         </div>
-        <AccentBar width={160} className="mt-12" />
+        <AccentBar width={120} className="mt-10" />
         <p className="slide-body-lg" style={{ marginTop: 48, maxWidth: 1000, color: "#1A1A1A" }}>
           Mothers in Sub-Saharan Africa face a lifetime risk of dying from
           pregnancy or childbirth.

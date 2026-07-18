@@ -46,17 +46,17 @@ export default function Slide13({ index, total }: { index: number; total: number
           </h1>
           <AccentBar width={110} className="mt-10" />
         </div>
-        <div style={{ minWidth: 480, textAlign: "right" }}>
+        <div style={{ minWidth: 380, textAlign: "right" }}>
           <div className="slide-kicker" style={{ color: "rgba(255,255,255,0.7)" }}>The Ask</div>
           <div
             style={{
               fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
-              fontSize: 128,
+              fontSize: 88,
               fontWeight: 700,
               color: "white",
-              letterSpacing: "-0.04em",
+              letterSpacing: "-0.03em",
               lineHeight: 1,
-              marginTop: 16,
+              marginTop: 12,
             }}
           >
             {deckMeta.askAmount}

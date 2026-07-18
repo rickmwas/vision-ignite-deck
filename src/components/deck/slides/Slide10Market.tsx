@@ -49,10 +49,10 @@ export default function Slide10({ index, total }: { index: number; total: number
               <div
                 style={{
                   fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
-                  fontSize: 60,
+                  fontSize: 44,
                   fontWeight: 700,
                   color: "#145A2A",
-                  letterSpacing: "-0.03em",
+                  letterSpacing: "-0.02em",
                 }}
               >
                 {row.value}

@@ -30,7 +30,7 @@ export default function Slide05({ index, total }: { index: number; total: number
         <div className="slide-kicker" style={{ color: "rgba(255,255,255,0.85)" }}>Introducing</div>
         <h1
           className="slide-title-xl"
-          style={{ marginTop: 32, color: "white", fontSize: 200, lineHeight: 0.92 }}
+          style={{ marginTop: 24, color: "white", fontSize: 140, lineHeight: 0.95 }}
         >
           TotoAfya.
         </h1>

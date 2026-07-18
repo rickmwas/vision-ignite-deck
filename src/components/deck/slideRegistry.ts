@@ -5,6 +5,7 @@ import Slide03, { meta as m03 } from "./slides/Slide03Problem";
 import Slide04, { meta as m04 } from "./slides/Slide04ProblemVisual";
 import Slide05, { meta as m05 } from "./slides/Slide05Solution";
 import Slide06, { meta as m06 } from "./slides/Slide06HowItWorks";
+import Slide07WhyNow, { meta as m07wn } from "./slides/Slide07WhyNow";
 import Slide07, { meta as m07 } from "./slides/Slide07Outcome1";
 import Slide08, { meta as m08 } from "./slides/Slide08Outcome2";
 import Slide09, { meta as m09 } from "./slides/Slide09Traction";
@@ -31,6 +32,7 @@ export const slides: SlideEntry[] = [
   { Component: Slide04, meta: m04 },
   { Component: Slide05, meta: m05 },
   { Component: Slide06, meta: m06 },
+  { Component: Slide07WhyNow, meta: m07wn },
   { Component: Slide07, meta: m07 },
   { Component: Slide08, meta: m08 },
   { Component: Slide09, meta: m09 },
