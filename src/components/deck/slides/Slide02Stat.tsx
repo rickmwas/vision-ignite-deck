@@ -1,16 +1,15 @@
-import { SlideLayout, AccentBar } from "../SlideLayout";
+import { SlideLayout } from "../SlideLayout";
 
 export const meta = {
-  objective: "Deliver a single shocking statistic.",
-  headline: "1 in 39",
-  emotionalGoal: "Shock. Weight. Reality.",
+  objective: "One number. No context yet. Let it land in silence.",
+  headline: "280,000+",
+  emotionalGoal: "Weight. Shock. The audience must wonder why.",
 };
 
 export default function Slide02({ index, total }: { index: number; total: number }) {
   return (
     <SlideLayout index={index} total={total} tone="cream">
       <div
-        className="slide-enter"
         style={{
           position: "absolute",
           inset: 0,
@@ -18,37 +17,53 @@ export default function Slide02({ index, total }: { index: number; total: number
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          padding: "0 200px",
-          textAlign: "center",
+          paddingBottom: 60,
         }}
       >
-        <div className="slide-kicker" style={{ color: "#1F7A3A" }}>
-          Sub-Saharan Africa · Lifetime Risk
-        </div>
+        {/* The number — massive, nothing else above it */}
         <div
-          className="slide-title-xl"
           style={{
-            marginTop: 28,
-            fontSize: 220,
-            lineHeight: 0.9,
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
             fontWeight: 800,
-            letterSpacing: "-0.06em",
+            fontSize: 260,
+            lineHeight: 0.88,
+            letterSpacing: "-0.065em",
             color: "#1F7A3A",
             display: "flex",
             alignItems: "baseline",
-            gap: 24,
           }}
         >
-          <span>1</span>
-          <span style={{ fontSize: 130, color: "#1A1A1A", opacity: 0.35 }}>in</span>
-          <span style={{ color: "#F26A21" }}>39</span>
+          280,000
+          <span style={{ color: "#F26A21", fontSize: 200 }}>+</span>
         </div>
-        <AccentBar width={120} className="mt-10" />
-        <p className="slide-body-lg" style={{ marginTop: 48, maxWidth: 1000, color: "#1A1A1A" }}>
-          Mothers in Sub-Saharan Africa face a lifetime risk of dying from
-          pregnancy or childbirth.
+
+        {/* The reveal — small, below, after the pause */}
+        <p
+          style={{
+            marginTop: 80,
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
+            fontWeight: 300,
+            fontSize: 38,
+            color: "rgba(26,26,26,0.72)",
+            letterSpacing: "0.01em",
+            textAlign: "center",
+            maxWidth: 860,
+            lineHeight: 1.4,
+          }}
+        >
+          mothers die every year from pregnancy-related causes.
         </p>
-        <p className="slide-caption" style={{ marginTop: 24, color: "rgba(26,26,26,0.55)" }}>
+
+        <p
+          style={{
+            marginTop: 36,
+            fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+            fontSize: 17,
+            color: "rgba(26,26,26,0.35)",
+            letterSpacing: "0.06em",
+            textTransform: "uppercase",
+          }}
+        >
           Source: WHO Maternal Mortality Report, 2023
         </p>
       </div>

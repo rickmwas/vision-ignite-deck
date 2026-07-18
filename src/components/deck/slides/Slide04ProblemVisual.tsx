@@ -1,68 +1,191 @@
 import { SlideLayout } from "../SlideLayout";
-import img from "@/assets/deck/04-triptych.jpg";
 
 export const meta = {
-  objective: "Show the disconnect with imagery, not words.",
-  headline: "Three people. One mother. Zero shared record.",
-  emotionalGoal: "Feel the gap.",
+  objective: "Make the system's failure personal. People remember stories, not systems.",
+  headline: "Mama Akinyi's story.",
+  emotionalGoal: "Empathy. Personal connection. This could be anyone.",
+};
+
+const EVENTS = [
+  {
+    week: "Week 12",
+    event: "First ANC visit",
+    detail: "CHV records visit in paper register.",
+    status: "ok",
+  },
+  {
+    week: "Week 24",
+    event: "Missed follow-up",
+    detail: "CHV transferred. New CHV has no record of Akinyi.",
+    status: "fail",
+  },
+  {
+    week: "Week 28",
+    event: "Clinic visit",
+    detail: "Nurse sees her for first time. No history. Starts from zero.",
+    status: "fail",
+  },
+  {
+    week: "Week 34",
+    event: "Danger signs",
+    detail: "High blood pressure. Clinic nurse has no previous readings to compare.",
+    status: "critical",
+  },
+  {
+    week: "Week 36",
+    event: "Emergency referral",
+    detail: "Hospital receives no summary. Akinyi explains everything herself.",
+    status: "critical",
+  },
+];
+
+const STATUS_COLOR: Record<string, string> = {
+  ok: "#1F7A3A",
+  fail: "#F26A21",
+  critical: "#E53E3E",
 };
 
 export default function Slide04({ index, total }: { index: number; total: number }) {
+  const W = 1920;
+  const lineY = 520;
+  const startX = 180;
+  const endX = W - 180;
+  const step = (endX - startX) / (EVENTS.length - 1);
+
   return (
-    <SlideLayout index={index} total={total} tone="dark">
-      <img
-        src={img}
-        alt="Mother, CHV, nurse — disconnected"
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(180deg, rgba(14,26,18,0.55) 0%, rgba(14,26,18,0.25) 45%, rgba(14,26,18,0.85) 100%)",
-        }}
-      />
+    <SlideLayout index={index} total={total} tone="cream">
+      {/* Header */}
       <div
         className="slide-enter"
+        style={{ position: "absolute", top: 140, left: 120, zIndex: 10 }}
+      >
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>
+          A True Story · Kilifi County
+        </div>
+        <h1 className="slide-title" style={{ marginTop: 24, color: "#145A2A" }}>
+          Mama Akinyi's journey.
+        </h1>
+      </div>
+
+      <svg
+        width={W}
+        height={1080}
+        style={{ position: "absolute", inset: 0, zIndex: 5 }}
+        viewBox={`0 0 ${W} 1080`}
+      >
+        {/* Timeline baseline */}
+        <line
+          x1={startX}
+          y1={lineY}
+          x2={endX}
+          y2={lineY}
+          stroke="rgba(26,26,26,0.15)"
+          strokeWidth={2}
+        />
+
+        {EVENTS.map((ev, i) => {
+          const x = startX + i * step;
+          const color = STATUS_COLOR[ev.status];
+          const isAbove = i % 2 === 0;
+          const dotY = lineY;
+          const textTopY = isAbove ? dotY - 180 : dotY + 60;
+
+          return (
+            <g key={i}>
+              {/* Connector */}
+              <line
+                x1={x}
+                y1={dotY + (isAbove ? -24 : 24)}
+                x2={x}
+                y2={isAbove ? textTopY + 140 : textTopY - 12}
+                stroke={color}
+                strokeWidth={ev.status === "critical" ? 3 : 1.5}
+                strokeOpacity={ev.status === "critical" ? 0.9 : 0.4}
+                strokeDasharray={ev.status === "ok" ? "none" : "6 5"}
+              />
+
+              {/* Dot */}
+              <circle
+                cx={x}
+                cy={dotY}
+                r={ev.status === "critical" ? 20 : 14}
+                fill={color}
+                fillOpacity={ev.status === "critical" ? 1 : 0.85}
+              />
+              {ev.status === "critical" && (
+                <>
+                  <circle cx={x} cy={dotY} r={30} fill="none" stroke={color} strokeWidth={2} strokeOpacity={0.35} />
+                </>
+              )}
+
+              {/* Week label */}
+              <text
+                x={x}
+                y={isAbove ? textTopY : textTopY}
+                textAnchor="middle"
+                fill={color}
+                fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif"
+                fontWeight={700}
+                fontSize={20}
+                letterSpacing="0.05em"
+              >
+                {ev.week}
+              </text>
+
+              {/* Event */}
+              <text
+                x={x}
+                y={isAbove ? textTopY + 38 : textTopY + 38}
+                textAnchor="middle"
+                fill="#1A1A1A"
+                fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif"
+                fontWeight={600}
+                fontSize={24}
+              >
+                {ev.event}
+              </text>
+
+              {/* Detail — wrapped manually */}
+              {ev.detail.split(". ").map((line, j) => (
+                <text
+                  key={j}
+                  x={x}
+                  y={isAbove ? textTopY + 78 + j * 26 : textTopY + 78 + j * 26}
+                  textAnchor="middle"
+                  fill="rgba(26,26,26,0.6)"
+                  fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+                  fontSize={18}
+                >
+                  {line}{j < ev.detail.split(". ").length - 1 ? "." : ""}
+                </text>
+              ))}
+            </g>
+          );
+        })}
+      </svg>
+
+      {/* Bottom anchor */}
+      <div
         style={{
           position: "absolute",
+          bottom: 90,
           left: 120,
           right: 120,
-          bottom: 180,
           zIndex: 10,
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "space-between",
-          gap: 80,
+          textAlign: "center",
         }}
       >
-        <div style={{ maxWidth: 900 }}>
-          <div className="slide-kicker" style={{ color: "#F26A21" }}>The Reality</div>
-          <h1 className="slide-title" style={{ marginTop: 32, color: "white" }}>
-            Three people. One mother.<br />
-            <span style={{ color: "#F26A21" }}>Zero shared record.</span>
-          </h1>
-        </div>
-        <div
-          className="slide-body"
+        <p
           style={{
-            display: "flex",
-            gap: 48,
-            color: "rgba(255,255,255,0.82)",
             fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
-            fontWeight: 500,
-            letterSpacing: "0.05em",
-            textTransform: "uppercase",
+            fontWeight: 400,
             fontSize: 22,
+            color: "rgba(26,26,26,0.45)",
+            fontStyle: "italic",
           }}
         >
-          <span>Mother</span>
-          <span style={{ opacity: 0.4 }}>·</span>
-          <span>CHV</span>
-          <span style={{ opacity: 0.4 }}>·</span>
-          <span>Nurse</span>
-        </div>
+          She didn't fall through a crack. She fell through a system designed without her in mind.
+        </p>
       </div>
     </SlideLayout>
   );

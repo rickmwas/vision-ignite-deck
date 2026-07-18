@@ -21,9 +21,21 @@ export const traction = {
 };
 
 export const team = [
-  { name: "[Founder Name]", role: "Founder & CEO", credential: "[10+ yrs maternal health · ex-Ministry of Health]" },
-  { name: "[CTO Name]",     role: "CTO",             credential: "[Ex-Safaricom · offline-first mobile systems]" },
-  { name: "[CMO Name]",     role: "Chief Medical Officer", credential: "[OB-GYN · [University] · [Hospital]]" },
+  {
+    name: "[Founder Name]",
+    role: "Founder & CEO",
+    credential: "We've spent months studying maternal workflows inside Kenyan healthcare — walking with CHVs, sitting in clinics, learning what paper registers can't tell you.",
+  },
+  {
+    name: "[CTO Name]",
+    role: "CTO",
+    credential: "Built offline-first mobile systems in environments where connectivity is a luxury. We don't design for best-case — we design for reality.",
+  },
+  {
+    name: "[CMO Name]",
+    role: "Chief Medical Officer",
+    credential: "OB-GYN who has seen the same preventable tragedy repeat across facilities. We're not building software. We're building the infrastructure care needs.",
+  },
 ];
 
 export const market = {

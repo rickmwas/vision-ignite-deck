@@ -1,117 +1,125 @@
-import { SlideLayout, AccentBar } from "../SlideLayout";
-import { Zap, Users, Signal, HeartPulse } from "lucide-react";
+import { SlideLayout } from "../SlideLayout";
+import img from "@/assets/deck/08-offline-chv.jpg";
 
 export const meta = {
-  objective: "Answer why now and why us in one balanced slide.",
-  headline: "Why now. Why us.",
-  emotionalGoal: "Conviction. Timing.",
+  objective: "Show outcome 3 — the CHV. Complete the product story arc.",
+  headline: "Nobody slipped through the cracks.",
+  emotionalGoal: "Confidence. The system is complete. Every person in the chain is connected.",
 };
-
-const WHY_NOW = [
-  {
-    icon: Zap,
-    title: "Kenya's eCHIS strategy",
-    body: "The Ministry of Health is digitising community care nationwide — counties are actively looking for partners.",
-  },
-  {
-    icon: Signal,
-    title: "Rural connectivity is real",
-    body: "Smartphone reach in rural counties finally makes an offline-first, CHV-led platform viable.",
-  },
-];
-
-const WHY_US = [
-  {
-    icon: Users,
-    title: "Embedded in the field",
-    body: "We've trained CHVs in Naivasha and Kilifi. We know the workflows because we've walked them.",
-  },
-  {
-    icon: HeartPulse,
-    title: "Clinical + technical + local",
-    body: "OB-GYN leadership, offline-first engineering, and Ministry-level relationships in one team.",
-  },
-];
-
-function Column({
-  kicker,
-  items,
-}: {
-  kicker: string;
-  items: { icon: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>; title: string; body: string }[];
-}) {
-  return (
-    <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 32 }}>
-      <div className="slide-kicker" style={{ color: "#F26A21" }}>{kicker}</div>
-      {items.map(({ icon: Icon, title, body }, i) => (
-        <div key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 14,
-              background: "#1F7A3A",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-            }}
-          >
-            <Icon size={26} color="#FFFFFF" strokeWidth={2} />
-          </div>
-          <div style={{ flex: 1 }}>
-            <div
-              className="slide-subtitle"
-              style={{ fontSize: 26, color: "#145A2A", fontWeight: 600 }}
-            >
-              {title}
-            </div>
-            <div className="slide-body" style={{ marginTop: 8, color: "rgba(26,26,26,0.75)", maxWidth: 520 }}>
-              {body}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function Slide07WhyNow({ index, total }: { index: number; total: number }) {
   return (
-    <SlideLayout index={index} total={total} tone="light">
+    <SlideLayout index={index} total={total} tone="dark">
+      {/* Background image */}
+      <img
+        src={img}
+        alt=""
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+      />
       <div
-        className="slide-enter"
         style={{
           position: "absolute",
-          left: 120,
-          right: 120,
-          top: 180,
-          zIndex: 10,
+          inset: 0,
+          background:
+            "linear-gradient(270deg, rgba(14,26,18,0.95) 0%, rgba(14,26,18,0.78) 42%, rgba(14,26,18,0.2) 100%)",
         }}
+      />
+
+      {/* Right — story */}
+      <div
+        className="slide-enter"
+        style={{ position: "absolute", right: 120, top: 240, width: 820, zIndex: 10, textAlign: "right" }}
       >
-        <div className="slide-kicker" style={{ color: "#F26A21" }}>The Moment</div>
-        <h1 className="slide-title" style={{ marginTop: 20, color: "#145A2A" }}>
-          Why <span style={{ color: "#F26A21" }}>now</span>. Why <span style={{ color: "#F26A21" }}>us</span>.
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>
+          The CHV · Naivasha · No signal
+        </div>
+        <h1
+          style={{
+            marginTop: 36,
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
+            fontWeight: 700,
+            fontSize: 76,
+            lineHeight: 1.05,
+            letterSpacing: "-0.04em",
+            color: "white",
+            maxWidth: 800,
+            marginLeft: "auto",
+          }}
+        >
+          "Nobody slipped through the cracks."
         </h1>
-        <AccentBar width={90} className="mt-6" />
       </div>
 
+      {/* UI mockup — bottom right */}
       <div
-        className="slide-enter"
         style={{
           position: "absolute",
-          left: 120,
           right: 120,
-          top: 460,
-          bottom: 160,
-          display: "flex",
-          gap: 100,
+          bottom: 140,
           zIndex: 10,
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(255,255,255,0.14)",
+          borderRadius: 20,
+          padding: "28px 36px",
+          width: 780,
+          backdropFilter: "blur(8px)",
         }}
       >
-        <Column kicker="Why Now" items={WHY_NOW} />
-        <div style={{ width: 1, background: "rgba(20,90,42,0.15)" }} />
-        <Column kicker="Why Us" items={WHY_US} />
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+          <div>
+            <div style={{ fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif", fontWeight: 600, fontSize: 15, color: "#8BC34A", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              CHV Dashboard · Offline mode
+            </div>
+            <div style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 13, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>
+              Last sync 4h ago · 3 visits recorded
+            </div>
+          </div>
+          {/* Offline pill */}
+          <div style={{ padding: "6px 16px", borderRadius: 999, background: "rgba(139,195,74,0.18)", border: "1px solid rgba(139,195,74,0.4)", fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 13, color: "#8BC34A", fontWeight: 600 }}>
+            ● Offline · syncing when connected
+          </div>
+        </div>
+
+        {/* Visit list */}
+        {[
+          { name: "Mama Akinyi", week: "32 wks", status: "Visited", flag: false },
+          { name: "Mama Ochieng", week: "28 wks", status: "Visited", flag: false },
+          { name: "Mama Wanjiku", week: "36 wks", status: "⚠ BP elevated", flag: true },
+        ].map((r, i) => (
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "12px 0",
+              borderTop: i > 0 ? "1px solid rgba(255,255,255,0.07)" : "none",
+            }}
+          >
+            <div>
+              <div style={{ fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif", fontWeight: 600, fontSize: 18, color: "rgba(255,255,255,0.9)" }}>
+                {r.name}
+              </div>
+              <div style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 14, color: "rgba(255,255,255,0.4)", marginTop: 3 }}>
+                {r.week}
+              </div>
+            </div>
+            <div
+              style={{
+                padding: "6px 16px",
+                borderRadius: 999,
+                background: r.flag ? "rgba(242,106,33,0.18)" : "rgba(31,122,58,0.2)",
+                border: `1px solid ${r.flag ? "rgba(242,106,33,0.4)" : "rgba(31,122,58,0.4)"}`,
+                fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+                fontSize: 14,
+                color: r.flag ? "#F26A21" : "#8BC34A",
+                fontWeight: 600,
+              }}
+            >
+              {r.status}
+            </div>
+          </div>
+        ))}
       </div>
     </SlideLayout>
   );

@@ -2,14 +2,15 @@ import { SlideLayout } from "../SlideLayout";
 import img from "@/assets/deck/01-mother-alone.jpg";
 
 export const meta = {
-  objective: "Open with silence and a single human moment.",
-  headline: "Somewhere in Kenya, a mother just missed her appointment.",
-  emotionalGoal: "Silence, presence, human focus.",
+  objective: "Open with silence. One image. Create the question: what happened?",
+  headline: "She did everything right.",
+  emotionalGoal: "Silence. Presence. Curiosity. The audience must lean in.",
 };
 
 export default function Slide01({ index, total }: { index: number; total: number }) {
   return (
     <SlideLayout index={index} total={total} tone="dark">
+      {/* Full-bleed photo */}
       <img
         src={img}
         alt=""
@@ -19,23 +20,53 @@ export default function Slide01({ index, total }: { index: number; total: number
           width: "100%",
           height: "100%",
           objectFit: "cover",
+          objectPosition: "center 30%",
         }}
       />
+
+      {/* Subtle gradient — bottom only, so the image breathes */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "linear-gradient(90deg, rgba(14,26,18,0.85) 0%, rgba(14,26,18,0.55) 45%, rgba(14,26,18,0.15) 100%)",
+            "linear-gradient(180deg, rgba(14,26,18,0.08) 0%, rgba(14,26,18,0.18) 55%, rgba(14,26,18,0.78) 100%)",
         }}
       />
-      <div className="slide-enter" style={{ position: "absolute", left: 120, top: 340, width: 1000, zIndex: 10 }}>
-        <div className="slide-kicker" style={{ color: "#F26A21" }}>A True Story · Kilifi County</div>
-        <h1 className="slide-title-lg" style={{ marginTop: 40, color: "white", maxWidth: 960 }}>
-          Somewhere in Kenya, a mother just missed her appointment.
-        </h1>
-        <p className="slide-body-lg" style={{ marginTop: 32, color: "rgba(255,255,255,0.82)", maxWidth: 780 }}>
-          She doesn't know it yet. Neither does her nurse.
+
+      {/* The only text — bottom left, quiet, haunting */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 110,
+          left: 120,
+          zIndex: 10,
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
+            fontWeight: 300,
+            fontSize: 46,
+            color: "rgba(255,255,255,0.93)",
+            letterSpacing: "0.005em",
+            margin: 0,
+            lineHeight: 1.3,
+          }}
+        >
+          She did everything right.
+        </p>
+        <p
+          style={{
+            fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
+            fontWeight: 300,
+            fontSize: 30,
+            color: "rgba(255,255,255,0.38)",
+            marginTop: 18,
+            letterSpacing: "0.08em",
+          }}
+        >
+          . . .
         </p>
       </div>
     </SlideLayout>
