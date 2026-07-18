@@ -47,13 +47,13 @@ export function SlideLayout({
           <div
             style={{
               position: "absolute",
-              top: 60,
-              left: 80,
+              top: 56,
+              left: 72,
               zIndex: 50,
               pointerEvents: "none",
             }}
           >
-            <LogoMark variant={logoVariant} width={240} />
+            <LogoMark variant={logoVariant} width={180} />
           </div>
 
           {/* Slide counter — bottom right */}
@@ -61,40 +61,22 @@ export function SlideLayout({
             className="slide-page"
             style={{
               position: "absolute",
-              bottom: 60,
-              right: 80,
+              bottom: 56,
+              right: 72,
               color: chromeColor,
               fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
               fontWeight: 500,
               zIndex: 50,
               display: "flex",
               alignItems: "center",
-              gap: 14,
+              gap: 12,
             }}
           >
             <span style={{ fontVariantNumeric: "tabular-nums" }}>
               {String(index + 1).padStart(2, "0")}
             </span>
-            <span style={{ width: 40, height: 1, background: chromeColor, opacity: 0.5 }} />
+            <span style={{ width: 32, height: 1, background: chromeColor, opacity: 0.5 }} />
             <span style={{ fontVariantNumeric: "tabular-nums" }}>{String(total).padStart(2, "0")}</span>
-          </div>
-
-          {/* Bottom-left brand mark line */}
-          <div
-            className="slide-chrome"
-            style={{
-              position: "absolute",
-              bottom: 60,
-              left: 80,
-              color: chromeColor,
-              fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
-              fontWeight: 500,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              zIndex: 50,
-            }}
-          >
-            TotoAfya Digital · Investor Pitch 2026
           </div>
         </>
       )}
