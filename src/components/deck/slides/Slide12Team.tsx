@@ -11,8 +11,8 @@ function Portrait({ initials }: { initials: string }) {
   return (
     <div
       style={{
-        width: 260,
-        height: 260,
+        width: 200,
+        height: 200,
         borderRadius: 999,
         background: "linear-gradient(145deg, #1F7A3A 0%, #8BC34A 100%)",
         display: "flex",
@@ -20,11 +20,11 @@ function Portrait({ initials }: { initials: string }) {
         justifyContent: "center",
         fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
         fontWeight: 700,
-        fontSize: 96,
+        fontSize: 72,
         color: "white",
         letterSpacing: "-0.03em",
         boxShadow: "0 20px 60px -20px rgba(20,90,42,0.4)",
-        border: "6px solid white",
+        border: "5px solid white",
       }}
     >
       {initials}
@@ -63,24 +63,24 @@ export default function Slide12({ index, total }: { index: number; total: number
             </div>
             <div
               className="slide-subtitle"
-              style={{ marginTop: 32, color: "#145A2A", fontSize: 40 }}
+              style={{ marginTop: 24, color: "#145A2A", fontSize: 28 }}
             >
               {m.name}
             </div>
             <div
               style={{
-                marginTop: 8,
+                marginTop: 6,
                 color: "#F26A21",
                 fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
                 fontWeight: 600,
-                fontSize: 22,
-                letterSpacing: "0.15em",
+                fontSize: 16,
+                letterSpacing: "0.18em",
                 textTransform: "uppercase",
               }}
             >
               {m.role}
             </div>
-            <div className="slide-caption" style={{ marginTop: 16, color: "rgba(26,26,26,0.7)", maxWidth: 380, marginInline: "auto" }}>
+            <div className="slide-caption" style={{ marginTop: 12, color: "rgba(26,26,26,0.7)", maxWidth: 340, marginInline: "auto" }}>
               {m.credential}
             </div>
           </div>

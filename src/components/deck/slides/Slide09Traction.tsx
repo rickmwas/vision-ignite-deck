@@ -9,20 +9,20 @@ export const meta = {
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div style={{ flex: 1, borderTop: "3px solid #1F7A3A", paddingTop: 40 }}>
+    <div style={{ flex: 1, borderTop: "3px solid #1F7A3A", paddingTop: 28 }}>
       <div
         className="slide-title-lg"
-        style={{ color: "#F26A21", fontSize: 160, fontWeight: 700, letterSpacing: "-0.05em" }}
+        style={{ color: "#F26A21", fontSize: 108, fontWeight: 700, letterSpacing: "-0.04em", lineHeight: 1 }}
       >
         {value}
       </div>
       <div
         style={{
-          marginTop: 24,
+          marginTop: 18,
           fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
           fontWeight: 500,
-          fontSize: 26,
-          letterSpacing: "0.15em",
+          fontSize: 18,
+          letterSpacing: "0.18em",
           textTransform: "uppercase",
           color: "#145A2A",
         }}
