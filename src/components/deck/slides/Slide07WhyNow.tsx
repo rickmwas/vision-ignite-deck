@@ -3,7 +3,7 @@ import img from "@/assets/deck/08-offline-chv.jpg";
 
 export const meta = {
   objective: "Show outcome 3 — the CHV. Complete the product story arc.",
-  headline: "Nobody slipped through the cracks.",
+  headline: "Care continued even without internet.",
   emotionalGoal: "Confidence. The system is complete. Every person in the chain is connected.",
 };
 
@@ -46,7 +46,7 @@ export default function Slide07WhyNow({ index, total }: { index: number; total: 
             marginLeft: "auto",
           }}
         >
-          "Nobody slipped through the cracks."
+          "Care continued even without internet."
         </h1>
       </div>
 

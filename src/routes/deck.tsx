@@ -32,9 +32,21 @@ function DeckRoute() {
   const [pptxProgress, setPptxProgress] = useState<ExportProgress | null>(null);
 
   const handleExportPptx = async () => {
-    if (pptxProgress) return;
+    console.log("handleExportPptx: clicked!");
+    if (pptxProgress) {
+      console.log("handleExportPptx: export already in progress, ignoring click");
+      return;
+    }
     try {
-      await exportToPptx((p) => setPptxProgress(p));
+      console.log("handleExportPptx: calling exportToPptx...");
+      await exportToPptx((p) => {
+        console.log(`handleExportPptx: progress ${p.done}/${p.total}`);
+        setPptxProgress(p);
+      });
+      console.log("handleExportPptx: export complete!");
+    } catch (err) {
+      console.error("handleExportPptx: export failed with error:", err);
+      alert(`Export failed: ${err instanceof Error ? err.message : String(err)}`);
     } finally {
       setPptxProgress(null);
     }

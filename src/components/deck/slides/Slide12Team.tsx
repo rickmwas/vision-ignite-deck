@@ -1,5 +1,8 @@
 import { SlideLayout, AccentBar } from "../SlideLayout";
 import { team } from "../content";
+import founderImg from "@/assets/deck/founder.png";
+import ctoImg from "@/assets/deck/cto.png";
+import cmoImg from "@/assets/deck/cmo.png";
 
 export const meta = {
   objective: "Show obsession, not credentials. Investors fund obsessed founders.",
@@ -7,7 +10,9 @@ export const meta = {
   emotionalGoal: "Trust. Obsession. These people will not quit.",
 };
 
-function Portrait({ initials }: { initials: string }) {
+const PORTRAITS = [founderImg, ctoImg, cmoImg];
+
+function Portrait({ image, initials }: { image?: string; initials: string }) {
   return (
     <div
       style={{
@@ -26,9 +31,18 @@ function Portrait({ initials }: { initials: string }) {
         boxShadow: "0 20px 60px -20px rgba(20,90,42,0.35)",
         border: "4px solid white",
         flexShrink: 0,
+        overflow: "hidden",
       }}
     >
-      {initials}
+      {image ? (
+        <img
+          src={image}
+          alt={initials}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      ) : (
+        initials
+      )}
     </div>
   );
 }
@@ -77,6 +91,7 @@ export default function Slide12({ index, total }: { index: number; total: number
           >
             <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
               <Portrait
+                image={PORTRAITS[i]}
                 initials={m.name.replace(/[\[\]]/g, "").split(" ").map((w) => w[0]).slice(0, 2).join("")}
               />
               <div>

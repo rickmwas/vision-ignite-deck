@@ -44,17 +44,17 @@ export default function Slide14Final({ index, total }: { index: number; total: n
         healthcare journey.
       </p>
 
-      {/* Logo — small, bottom center */}
+      {/* Logo — bottom center, enlarged */}
       <div
         style={{
           position: "absolute",
           bottom: 72,
           left: "50%",
           transform: "translateX(-50%)",
-          opacity: 0.75,
+          opacity: 0.85,
         }}
       >
-        <LogoMark variant="knockout" width={160} />
+        <LogoMark variant="knockout" width={260} />
       </div>
     </div>
   );

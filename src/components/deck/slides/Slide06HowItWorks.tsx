@@ -1,9 +1,9 @@
 import { SlideLayout } from "../SlideLayout";
 
 export const meta = {
-  objective: "Reveal the contrarian insight. This is the slide investors remember.",
+  objective: "Reveal the contrarian insight. This is the intellectual centerpiece that investors remember.",
   headline: "Everyone is solving the wrong problem.",
-  emotionalGoal: "Aha. Intellectual excitement. The founder sees something others don't.",
+  emotionalGoal: "Aha. Conviction. The founder sees the structural gap.",
 };
 
 export default function Slide06({ index, total }: { index: number; total: number }) {
@@ -22,7 +22,7 @@ export default function Slide06({ index, total }: { index: number; total: number
             marginTop: 28,
             fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
             fontWeight: 700,
-            fontSize: 80,
+            fontSize: 76,
             lineHeight: 1.05,
             letterSpacing: "-0.04em",
             color: "white",
@@ -39,11 +39,11 @@ export default function Slide06({ index, total }: { index: number; total: number
         className="slide-enter"
         style={{
           position: "absolute",
-          bottom: 160,
-          left: 120,
-          right: 120,
+          bottom: 180,
+          left: 160,
+          right: 160,
           display: "flex",
-          gap: 0,
+          gap: 100,
           zIndex: 10,
         }}
       >
@@ -52,7 +52,7 @@ export default function Slide06({ index, total }: { index: number; total: number
           style={{
             flex: 1,
             borderRight: "1px solid rgba(255,255,255,0.12)",
-            paddingRight: 80,
+            paddingRight: 60,
           }}
         >
           <div
@@ -63,45 +63,45 @@ export default function Slide06({ index, total }: { index: number; total: number
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "rgba(255,255,255,0.4)",
-              marginBottom: 28,
+              marginBottom: 32,
             }}
           >
             Current thinking
           </div>
-          <p
+          
+          <ul
             style={{
-              fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
-              fontWeight: 400,
-              fontSize: 38,
-              color: "rgba(255,255,255,0.55)",
-              lineHeight: 1.3,
+              listStyle: "none",
+              padding: 0,
               margin: 0,
-              maxWidth: 680,
-              textDecoration: "line-through",
-              textDecorationColor: "rgba(242,106,33,0.5)",
+              display: "flex",
+              flexDirection: "column",
+              gap: 20,
             }}
           >
-            Maternal health is an information problem.
-          </p>
-          <p
-            style={{
-              marginTop: 24,
-              fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
-              fontSize: 22,
-              color: "rgba(255,255,255,0.3)",
-              lineHeight: 1.5,
-              maxWidth: 620,
-            }}
-          >
-            More apps. More dashboards. More data collection. The records exist somewhere — they're just not shared.
-          </p>
+            {["Pregnancy Apps", "Hospital Systems", "Reporting", "Education"].map((item, idx) => (
+              <li
+                key={idx}
+                style={{
+                  fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
+                  fontWeight: 400,
+                  fontSize: 32,
+                  color: "rgba(255,255,255,0.4)",
+                  textDecoration: "line-through",
+                  textDecorationColor: "rgba(242,106,33,0.6)",
+                }}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Right — our belief */}
         <div
           style={{
             flex: 1,
-            paddingLeft: 80,
+            paddingLeft: 40,
           }}
         >
           <div
@@ -112,25 +112,24 @@ export default function Slide06({ index, total }: { index: number; total: number
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "#F26A21",
-              marginBottom: 28,
+              marginBottom: 32,
             }}
           >
             Our belief
           </div>
-          <p
+          
+          <div
             style={{
               fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
               fontWeight: 700,
-              fontSize: 48,
+              fontSize: 52,
               color: "white",
-              lineHeight: 1.2,
-              margin: 0,
-              maxWidth: 700,
+              lineHeight: 1.15,
+              marginTop: 10,
             }}
           >
-            Maternal health is a{" "}
-            <span style={{ color: "#F26A21" }}>coordination problem</span>.
-          </p>
+            Continuity of Care
+          </div>
           <p
             style={{
               marginTop: 24,
@@ -138,10 +137,10 @@ export default function Slide06({ index, total }: { index: number; total: number
               fontSize: 22,
               color: "rgba(255,255,255,0.65)",
               lineHeight: 1.5,
-              maxWidth: 660,
+              maxWidth: 600,
             }}
           >
-            Every actor in the care chain — mother, CHV, nurse, hospital — needs to share one story. TotoAfya makes that possible.
+            Connecting mother, CHV, nurse, and hospital into one shared record.
           </p>
         </div>
       </div>

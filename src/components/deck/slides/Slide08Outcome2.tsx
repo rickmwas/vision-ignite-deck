@@ -2,7 +2,7 @@ import { SlideLayout } from "../SlideLayout";
 
 export const meta = {
   objective: "Show outcome 2 — the mother's experience. Simple. Human.",
-  headline: "She didn't miss her appointment.",
+  headline: "She never missed another visit.",
   emotionalGoal: "Warmth. The system working for her, not against her.",
 };
 
@@ -35,7 +35,7 @@ export default function Slide08({ index, total }: { index: number; total: number
             maxWidth: 780,
           }}
         >
-          "She didn't miss her appointment."
+          "She never missed another visit."
         </h1>
         <p
           style={{

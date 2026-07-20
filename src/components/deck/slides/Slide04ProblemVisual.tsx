@@ -10,31 +10,31 @@ const EVENTS = [
   {
     week: "Week 12",
     event: "First ANC visit",
-    detail: "CHV records visit in paper register.",
+    detail: "CHV logs in paper book.",
     status: "ok",
   },
   {
     week: "Week 24",
     event: "Missed follow-up",
-    detail: "CHV transferred. New CHV has no record of Akinyi.",
+    detail: "CHV leaves. Record is lost.",
     status: "fail",
   },
   {
     week: "Week 28",
     event: "Clinic visit",
-    detail: "Nurse sees her for first time. No history. Starts from zero.",
+    detail: "Nurse has zero history.",
     status: "fail",
   },
   {
     week: "Week 34",
     event: "Danger signs",
-    detail: "High blood pressure. Clinic nurse has no previous readings to compare.",
+    detail: "Rising BP. No base readings.",
     status: "critical",
   },
   {
     week: "Week 36",
     event: "Emergency referral",
-    detail: "Hospital receives no summary. Akinyi explains everything herself.",
+    detail: "Hospital starts from scratch.",
     status: "critical",
   },
 ];

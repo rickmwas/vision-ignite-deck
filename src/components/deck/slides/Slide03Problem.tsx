@@ -1,135 +1,272 @@
 import { SlideLayout } from "../SlideLayout";
+import moh216Img from "@/assets/deck/moh216.png";
 
 export const meta = {
-  objective: "Show the broken system — don't describe it. Make them feel the gap.",
-  headline: "Every caregiver knows something. Nobody knows everything.",
-  emotionalGoal: "Frustration. Recognition. The system is the villain.",
+  objective: "Show fragmentation. Let the audience visually grasp the data silos between Mother, CHV, and Clinic.",
+  headline: "Maternal care is trapped in disconnected silos.",
+  emotionalGoal: "Frustration. Recognition of the communication gaps in public health.",
 };
-
-const NODES = [
-  { label: "Mother",           sub: "at home",           color: "#F26A21" },
-  { label: "CHV",              sub: "in the field",      color: "#8BC34A" },
-  { label: "Clinic",           sub: "referral care",     color: "#1F7A3A" },
-  { label: "Hospital",         sub: "specialist care",   color: "#145A2A" },
-  { label: "Baby",             sub: "new life begins",   color: "#F26A21" },
-];
-
-const W = 1920;
-const H = 1080;
-const nodeR = 80;
-const nodeY = H / 2 - 30;
-const totalW = W - 280;
-const startX = 140 + nodeR;
-const gap = (totalW - nodeR * 2) / (NODES.length - 1);
 
 export default function Slide03({ index, total }: { index: number; total: number }) {
   return (
-    <SlideLayout index={index} total={total} tone="light">
-      {/* Title */}
-      <div
-        className="slide-enter"
-        style={{ position: "absolute", top: 140, left: 120, zIndex: 10 }}
-      >
-        <div className="slide-kicker" style={{ color: "#F26A21" }}>The System</div>
-        <h1 className="slide-title" style={{ marginTop: 24, color: "#145A2A", maxWidth: 1100 }}>
-          Care is <span style={{ color: "#F26A21" }}>fragmented</span>.
+    <SlideLayout index={index} total={total} tone="cream">
+      {/* Header */}
+      <div className="slide-enter" style={{ position: "absolute", top: 130, left: 120, zIndex: 10 }}>
+        <div className="slide-kicker" style={{ color: "#F26A21" }}>The Problem</div>
+        <h1 className="slide-title" style={{ marginTop: 24, color: "#145A2A" }}>
+          Care is trapped in <span style={{ color: "#E53E3E" }}>disconnected silos</span>.
         </h1>
       </div>
 
-      <svg
-        width={W}
-        height={H}
-        style={{ position: "absolute", inset: 0, zIndex: 5 }}
-        viewBox={`0 0 ${W} ${H}`}
-      >
-        {/* Broken connector lines */}
-        {NODES.slice(0, -1).map((_, i) => {
-          const x1 = startX + i * gap + nodeR;
-          const x2 = startX + (i + 1) * gap - nodeR;
-          const midX = (x1 + x2) / 2;
-          return (
-            <g key={`line-${i}`}>
-              {/* dashed broken line */}
-              <line
-                x1={x1}
-                y1={nodeY}
-                x2={x2}
-                y2={nodeY}
-                stroke="#E53E3E"
-                strokeWidth={3}
-                strokeDasharray="12 14"
-                strokeOpacity={0.55}
-              />
-              {/* Gap / X mark in the middle */}
-              <circle cx={midX} cy={nodeY} r={18} fill="#FFF5F5" stroke="#E53E3E" strokeWidth={2} strokeOpacity={0.7} />
-              <line x1={midX - 9} y1={nodeY - 9} x2={midX + 9} y2={nodeY + 9} stroke="#E53E3E" strokeWidth={2.5} strokeOpacity={0.85} />
-              <line x1={midX + 9} y1={nodeY - 9} x2={midX - 9} y2={nodeY + 9} stroke="#E53E3E" strokeWidth={2.5} strokeOpacity={0.85} />
-
-              {/* "Different record" label */}
-              <text
-                x={midX}
-                y={nodeY + 56}
-                textAnchor="middle"
-                fill="rgba(200,50,50,0.65)"
-                fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-                fontSize={16}
-                letterSpacing="0.05em"
-              >
-                no shared record
-              </text>
-            </g>
-          );
-        })}
-
-        {/* Nodes */}
-        {NODES.map((n, i) => {
-          const x = startX + i * gap;
-          return (
-            <g key={`node-${i}`}>
-              {/* Circle */}
-              <circle cx={x} cy={nodeY} r={nodeR} fill="white" stroke={n.color} strokeWidth={4} />
-              <circle cx={x} cy={nodeY} r={nodeR - 10} fill={n.color} fillOpacity={0.1} />
-
-              {/* Label */}
-              <text
-                x={x}
-                y={nodeY - 8}
-                textAnchor="middle"
-                fill={n.color}
-                fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif"
-                fontWeight={700}
-                fontSize={28}
-                letterSpacing="-0.01em"
-              >
-                {n.label}
-              </text>
-              <text
-                x={x}
-                y={nodeY + 26}
-                textAnchor="middle"
-                fill="rgba(26,26,26,0.5)"
-                fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-                fontSize={17}
-              >
-                {n.sub}
-              </text>
-
-              {/* Notebook icon suggestion — small stack of lines */}
-              <rect x={x - 18} y={nodeY - nodeR - 44} width={36} height={28} rx={4} fill="rgba(26,26,26,0.08)" />
-              <line x1={x - 10} y1={nodeY - nodeR - 36} x2={x + 10} y2={nodeY - nodeR - 36} stroke="rgba(26,26,26,0.3)" strokeWidth={1.5} />
-              <line x1={x - 10} y1={nodeY - nodeR - 28} x2={x + 10} y2={nodeY - nodeR - 28} stroke="rgba(26,26,26,0.3)" strokeWidth={1.5} />
-              <line x1={x - 10} y1={nodeY - nodeR - 20} x2={x + 10} y2={nodeY - nodeR - 20} stroke="rgba(26,26,26,0.3)" strokeWidth={1.5} />
-            </g>
-          );
-        })}
-      </svg>
-
-      {/* Bottom sentence */}
+      {/* Spatially mapped columns & gaps */}
       <div
         className="slide-enter"
         style={{
           position: "absolute",
-          bottom: 110,
+          left: 120,
+          right: 120,
+          top: 280,
+          bottom: 160,
+          display: "flex",
+          alignItems: "center",
+          zIndex: 5,
+        }}
+      >
+        {/* Silo 1: The Caregiver (Mother) */}
+        <div
+          style={{
+            width: 440,
+            height: 520,
+            background: "white",
+            borderRadius: 24,
+            padding: "36px",
+            boxShadow: "0 8px 30px -10px rgba(26,26,26,0.06)",
+            border: "1px solid rgba(26,26,26,0.08)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <span style={{ fontSize: 32 }}>🤰</span>
+              <span
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#E53E3E",
+                  background: "#FFF5F5",
+                  padding: "4px 10px",
+                  borderRadius: 6,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                Silo 01
+              </span>
+            </div>
+
+            <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: 24, color: "#145A2A", marginBottom: 6 }}>
+              The Caregiver (Mother)
+            </div>
+            <div style={{ fontFamily: "Inter, sans-serif", fontSize: 14, color: "rgba(26,26,26,0.5)", marginBottom: 20 }}>
+              Primary Tool: MOH216 Paper Booklet
+            </div>
+
+            {/* Booklet Image */}
+            <div style={{ width: "100%", height: 160, display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(0,0,0,0.01)", borderRadius: 12, overflow: "hidden", marginBottom: 20 }}>
+              <img
+                src={moh216Img}
+                style={{
+                  height: "90%",
+                  objectFit: "contain",
+                  filter: "drop-shadow(0 6px 12px rgba(0,0,0,0.08))",
+                  transform: "rotate(-1deg)",
+                }}
+                alt="MOH216"
+              />
+            </div>
+          </div>
+
+          <p style={{ fontFamily: "Inter, sans-serif", fontSize: 15, color: "rgba(26,26,26,0.65)", lineHeight: 1.5, margin: 0 }}>
+            Booklet stays at home. If it gets misplaced, water-damaged, or left behind, her child's entire immunization and risk history is gone.
+          </p>
+        </div>
+
+        {/* Silo Gap 1 */}
+        <div style={{ width: 120, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
+          <div style={{ borderTop: "2px dashed rgba(229,62,62,0.4)", width: "100%" }} />
+          <div
+            style={{
+              background: "#FFF5F5",
+              border: "1px solid rgba(229,62,62,0.25)",
+              borderRadius: 12,
+              padding: "10px 14px",
+              textAlign: "center",
+              boxShadow: "0 6px 16px -4px rgba(229,62,62,0.15)",
+              zIndex: 10,
+              width: 100,
+            }}
+          >
+            <div style={{ fontSize: 18, marginBottom: 2 }}>⚠️</div>
+            <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: 11, color: "#C53030", textTransform: "uppercase", letterSpacing: "0.05em" }}>Silo Gap</div>
+            <div style={{ fontFamily: "Inter, sans-serif", fontSize: 10, color: "rgba(26,26,26,0.5)", marginTop: 2, lineHeight: 1.2 }}>No Home-to-Community Sync</div>
+          </div>
+          <div style={{ borderTop: "2px dashed rgba(229,62,62,0.4)", width: "100%" }} />
+        </div>
+
+        {/* Silo 2: Community (CHV) */}
+        <div
+          style={{
+            width: 440,
+            height: 520,
+            background: "white",
+            borderRadius: 24,
+            padding: "36px",
+            boxShadow: "0 8px 30px -10px rgba(26,26,26,0.06)",
+            border: "1px solid rgba(26,26,26,0.08)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <span style={{ fontSize: 32 }}>📋</span>
+              <span
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#E53E3E",
+                  background: "#FFF5F5",
+                  padding: "4px 10px",
+                  borderRadius: 6,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                Silo 02
+              </span>
+            </div>
+
+            <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: 24, color: "#145A2A", marginBottom: 6 }}>
+              Community Health (CHV)
+            </div>
+            <div style={{ fontFamily: "Inter, sans-serif", fontSize: 14, color: "rgba(26,26,26,0.5)", marginBottom: 20 }}>
+              Primary Tool: Physical Black Notebook
+            </div>
+
+            {/* Notebook Placeholder Graphic */}
+            <div style={{ width: "100%", height: 160, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "#f5f5f5", borderRadius: 12, border: "1px solid rgba(0,0,0,0.05)", marginBottom: 20 }}>
+              <div style={{ width: 70, height: 90, background: "#1a1a1a", borderRadius: 4, position: "relative", boxShadow: "0 4px 10px rgba(0,0,0,0.15)", display: "flex", flexDirection: "column", padding: "10px 8px" }}>
+                <div style={{ height: 2, background: "#fff", width: "80%", marginBottom: 6 }} />
+                <div style={{ height: 1, background: "rgba(255,255,255,0.3)", width: "100%", marginBottom: 4 }} />
+                <div style={{ height: 1, background: "rgba(255,255,255,0.3)", width: "90%", marginBottom: 4 }} />
+                <div style={{ height: 1, background: "rgba(255,255,255,0.3)", width: "70%" }} />
+                {/* Red binder ring markings */}
+                <div style={{ position: "absolute", left: -3, top: "20%", width: 6, height: 4, background: "#888", borderRadius: 2 }} />
+                <div style={{ position: "absolute", left: -3, top: "45%", width: 6, height: 4, background: "#888", borderRadius: 2 }} />
+                <div style={{ position: "absolute", left: -3, top: "70%", width: 6, height: 4, background: "#888", borderRadius: 2 }} />
+              </div>
+            </div>
+          </div>
+
+          <p style={{ fontFamily: "Inter, sans-serif", fontSize: 15, color: "rgba(26,26,26,0.65)", lineHeight: 1.5, margin: 0 }}>
+            Assessments are hand-written in a notebook. The clinic has no visibility. If a child defaults on a vaccine in the village, the system remains blind.
+          </p>
+        </div>
+
+        {/* Silo Gap 2 */}
+        <div style={{ width: 120, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
+          <div style={{ borderTop: "2px dashed rgba(229,62,62,0.4)", width: "100%" }} />
+          <div
+            style={{
+              background: "#FFF5F5",
+              border: "1px solid rgba(229,62,62,0.25)",
+              borderRadius: 12,
+              padding: "10px 14px",
+              textAlign: "center",
+              boxShadow: "0 6px 16px -4px rgba(229,62,62,0.15)",
+              zIndex: 10,
+              width: 100,
+            }}
+          >
+            <div style={{ fontSize: 18, marginBottom: 2 }}>⚠️</div>
+            <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: 11, color: "#C53030", textTransform: "uppercase", letterSpacing: "0.05em" }}>Silo Gap</div>
+            <div style={{ fontFamily: "Inter, sans-serif", fontSize: 10, color: "rgba(26,26,26,0.5)", marginTop: 2, lineHeight: 1.2 }}>No Community-to-Clinic Sync</div>
+          </div>
+          <div style={{ borderTop: "2px dashed rgba(229,62,62,0.4)", width: "100%" }} />
+        </div>
+
+        {/* Silo 3: The Clinic (Nurse) */}
+        <div
+          style={{
+            width: 440,
+            height: 520,
+            background: "white",
+            borderRadius: 24,
+            padding: "36px",
+            boxShadow: "0 8px 30px -10px rgba(26,26,26,0.06)",
+            border: "1px solid rgba(26,26,26,0.08)",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+              <span style={{ fontSize: 32 }}>🏥</span>
+              <span
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: "#E53E3E",
+                  background: "#FFF5F5",
+                  padding: "4px 10px",
+                  borderRadius: 6,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                Silo 03
+              </span>
+            </div>
+
+            <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: 24, color: "#145A2A", marginBottom: 6 }}>
+              The Facility (Clinic Nurse)
+            </div>
+            <div style={{ fontFamily: "Inter, sans-serif", fontSize: 14, color: "rgba(26,26,26,0.5)", marginBottom: 20 }}>
+              Primary Tool: Paper Files & Stacks
+            </div>
+
+            {/* Folder Stack Graphic */}
+            <div style={{ width: "100%", height: 160, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "#f5f5f5", borderRadius: 12, border: "1px solid rgba(0,0,0,0.05)", marginBottom: 20 }}>
+              <div style={{ position: "relative", width: 80, height: 70 }}>
+                {/* Back Folder */}
+                <div style={{ position: "absolute", left: 10, top: 0, width: 60, height: 50, background: "#D0D0D0", borderRadius: "4px 4px 0 0", border: "1px solid #B0B0B0" }} />
+                {/* Middle Folder */}
+                <div style={{ position: "absolute", left: 5, top: 10, width: 65, height: 50, background: "#E2A93E", borderRadius: "4px 4px 0 0", border: "1px solid #C69230", transform: "rotate(-2deg)" }} />
+                {/* Front Folder */}
+                <div style={{ position: "absolute", left: 0, top: 20, width: 70, height: 50, background: "#F4D068", borderRadius: "4px 4px 0 0", border: "1px solid #DBB64F", transform: "rotate(1deg)", boxShadow: "0 4px 8px rgba(0,0,0,0.1)" }} />
+              </div>
+            </div>
+          </div>
+
+          <p style={{ fontFamily: "Inter, sans-serif", fontSize: 15, color: "rgba(26,26,26,0.65)", lineHeight: 1.5, margin: 0 }}>
+            Nurses only see data when the mother arrives. They are completely blind to missed home treatments, danger signs, or community follow-ups.
+          </p>
+        </div>
+      </div>
+
+      {/* Bottom statement */}
+      <div
+        className="slide-enter"
+        style={{
+          position: "absolute",
+          bottom: 75,
           left: 120,
           right: 120,
           zIndex: 10,
@@ -140,14 +277,13 @@ export default function Slide03({ index, total }: { index: number; total: number
           style={{
             fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
             fontWeight: 500,
-            fontSize: 30,
+            fontSize: 24,
             color: "rgba(26,26,26,0.6)",
-            letterSpacing: "0.005em",
             margin: 0,
           }}
         >
           Every caregiver knows something.{" "}
-          <span style={{ color: "#E53E3E", fontWeight: 600 }}>Nobody knows everything.</span>
+          <span style={{ color: "#E53E3E", fontWeight: 700 }}>Nobody knows everything.</span>
         </p>
       </div>
     </SlideLayout>

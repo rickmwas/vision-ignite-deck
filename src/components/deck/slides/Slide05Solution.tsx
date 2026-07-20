@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
 import { SlideLayout } from "../SlideLayout";
+import { LogoMark } from "../LogoMark";
 
 export const meta = {
-  objective: "The magic moment. The audience discovers TotoAfya — we don't introduce it.",
+  objective: "The reveal. Transition from chaos to continuity. Let them feel the connection.",
   headline: "The journey becomes connected.",
-  emotionalGoal: "Relief. Inevitability. The audience sees it before you say it.",
+  emotionalGoal: "Aha. Relief. Seamless order.",
 };
 
 const NODES = [
@@ -23,6 +25,17 @@ const startX = 140 + nodeR;
 const gap = (totalW - nodeR * 2) / (NODES.length - 1);
 
 export default function Slide05({ index, total }: { index: number; total: number }) {
+  const [phase, setPhase] = useState(0); // 0: broken red, 1: healed green, 2: logo reveal
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setPhase(1), 800);
+    const t2 = setTimeout(() => setPhase(2), 1600);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, []);
+
   return (
     <SlideLayout index={index} total={total} tone="light">
       {/* Header */}
@@ -30,7 +43,7 @@ export default function Slide05({ index, total }: { index: number; total: number
         className="slide-enter"
         style={{ position: "absolute", top: 140, left: 120, zIndex: 10 }}
       >
-        <div className="slide-kicker" style={{ color: "#1F7A3A" }}>Introducing</div>
+        <div className="slide-kicker" style={{ color: "#1F7A3A" }}>The Solution</div>
         <h1 className="slide-title" style={{ marginTop: 24, color: "#145A2A" }}>
           The journey becomes{" "}
           <span style={{ color: "#1F7A3A" }}>connected</span>.
@@ -43,10 +56,11 @@ export default function Slide05({ index, total }: { index: number; total: number
         style={{ position: "absolute", inset: 0, zIndex: 5 }}
         viewBox={`0 0 ${W} ${H}`}
       >
-        {/* GREEN connector lines — healed */}
+        {/* Connector lines */}
         {NODES.slice(0, -1).map((_, i) => {
           const x1 = startX + i * gap + nodeR;
           const x2 = startX + (i + 1) * gap - nodeR;
+          const isGreen = phase >= 1;
           return (
             <line
               key={`line-${i}`}
@@ -54,9 +68,13 @@ export default function Slide05({ index, total }: { index: number; total: number
               y1={nodeY}
               x2={x2}
               y2={nodeY}
-              stroke="#1F7A3A"
-              strokeWidth={6}
-              strokeOpacity={0.85}
+              stroke={isGreen ? "#1F7A3A" : "#E53E3E"}
+              strokeWidth={isGreen ? 6 : 3}
+              strokeDasharray={isGreen ? "none" : "8 8"}
+              strokeOpacity={isGreen ? 0.9 : 0.4}
+              style={{
+                transition: "all 800ms cubic-bezier(0.4, 0, 0.2, 1)",
+              }}
             />
           );
         })}
@@ -67,7 +85,14 @@ export default function Slide05({ index, total }: { index: number; total: number
           return (
             <g key={`node-${i}`}>
               {/* Glow ring */}
-              <circle cx={x} cy={nodeY} r={nodeR + 16} fill="#1F7A3A" fillOpacity={0.08} />
+              <circle
+                cx={x}
+                cy={nodeY}
+                r={nodeR + 16}
+                fill="#1F7A3A"
+                fillOpacity={phase >= 1 ? 0.08 : 0}
+                style={{ transition: "fill-opacity 800ms ease" }}
+              />
               <circle cx={x} cy={nodeY} r={nodeR} fill="white" stroke={n.color} strokeWidth={5} />
               <circle cx={x} cy={nodeY} r={nodeR - 12} fill={n.color} fillOpacity={0.12} />
 
@@ -96,29 +121,31 @@ export default function Slide05({ index, total }: { index: number; total: number
             </g>
           );
         })}
-
-        {/* TotoAfya label on the green line */}
-        <rect
-          x={W / 2 - 130}
-          y={nodeY - 62}
-          width={260}
-          height={48}
-          rx={24}
-          fill="#1F7A3A"
-        />
-        <text
-          x={W / 2}
-          y={nodeY - 30}
-          textAnchor="middle"
-          fill="white"
-          fontFamily="Poppins, ui-sans-serif, system-ui, sans-serif"
-          fontWeight={700}
-          fontSize={26}
-          letterSpacing="-0.01em"
-        >
-          TotoAfya
-        </text>
       </svg>
+
+      {/* Magical Logo Reveal */}
+      <div
+        style={{
+          position: "absolute",
+          top: nodeY - 90,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 15,
+          opacity: phase >= 2 ? 1 : 0,
+          transformOrigin: "center center",
+          transition: "opacity 800ms ease, transform 800ms cubic-bezier(0.34, 1.56, 0.64, 1)",
+          background: "white",
+          border: "4px solid #1F7A3A",
+          boxShadow: "0 20px 50px -12px rgba(31,122,58,0.3)",
+          borderRadius: 24,
+          padding: "16px 36px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <LogoMark variant="full" width={180} />
+      </div>
 
       {/* Bottom sentence */}
       <div

@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/deck/logo.asset.json";
+import logoImg from "@/assets/deck/logo.png";
 
 type Props = {
   variant?: "full" | "knockout";
@@ -14,7 +14,7 @@ export function LogoMark({ variant = "full", className = "", width = 220 }: Prop
   const isKnockout = variant === "knockout";
   return (
     <img
-      src={logoAsset.url}
+      src={logoImg}
       alt="TotoAfya Digital"
       width={width}
       className={className}
