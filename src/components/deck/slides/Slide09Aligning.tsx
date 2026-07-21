@@ -98,9 +98,9 @@ export default function Slide09Aligning({ index, total }: { index: number; total
             position: "absolute",
             left: 960,
             top: 560,
-            transform: "translate(-50%, -50%)",
+            transform: `translate(-50%, -50%) scale(${isConverged ? 1 : 0.3})`,
             opacity: isConverged ? 1 : 0,
-            transition: "opacity 1000ms ease-in-out",
+            transition: "opacity 1000ms ease-in-out, transform 1200ms cubic-bezier(0.34, 1.56, 0.64, 1)",
             zIndex: 10,
             display: "flex",
             flexDirection: "column",
@@ -110,19 +110,19 @@ export default function Slide09Aligning({ index, total }: { index: number; total
           {/* Logo Icon Mark without text */}
           <div
             style={{
-              width: 110,
-              height: 110,
+              width: 220,
+              height: 220,
               borderRadius: "50%",
               background: "white",
-              border: "5px solid #1F7A3A",
+              border: "6px solid #1F7A3A",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 12px 36px -8px rgba(31,122,58,0.4)",
+              boxShadow: "0 20px 50px -10px rgba(31,122,58,0.35)",
             }}
           >
             {/* Minimal logo mark icon */}
-            <LogoMark variant="full" width={76} />
+            <LogoMark variant="full" width={150} />
           </div>
         </div>
       </div>
