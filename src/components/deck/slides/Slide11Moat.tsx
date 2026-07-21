@@ -1,4 +1,5 @@
 import { SlideLayout, AccentBar } from "../SlideLayout";
+import { RefreshCw, Wifi } from "lucide-react";
 
 export const meta = {
   objective: "Show our core competitive moats that prevent competitors from replicating our solution.",
@@ -11,13 +12,13 @@ const MOATS = [
     title: "1. The Caregiver Loop Network Effect",
     subtitle: "Unified Patient Record Flow",
     description: "Unlike standalone text lines (e.g. SMS alert systems) or clinical software (e.g. clinic EMRs), we close the care loop. By linking the Mother (onboarding), the CHV (community checkups), and the Nurse (clinical delivery) to a single record, we create a network effect. The more stakeholders in the system, the more valuable it becomes to county health departments.",
-    icon: "🔄",
+    icon: RefreshCw,
   },
   {
     title: "2. Offline-First Sync Architecture",
     subtitle: "Ruggedized for Rural Kenya",
     description: "Rural clinics and community visits have highly unstable internet. Our custom database engine supports robust offline-first operations. Nurses and CHVs capture data locally on client devices (tablets/phones). The system automatically queues, encrypts, and handles multi-master data sync once a signal is detected, avoiding merge conflicts.",
-    icon: "📡",
+    icon: Wifi,
   },
 ];
 
@@ -65,11 +66,11 @@ export default function Slide11Moat({ index, total }: { index: number; total: nu
             {/* Large Icon in Top Corner */}
             <div
               style={{
-                fontSize: 48,
+                color: "#1F7A3A",
                 marginBottom: 24,
               }}
             >
-              {m.icon}
+              <m.icon size={48} />
             </div>
 
             {/* Title */}

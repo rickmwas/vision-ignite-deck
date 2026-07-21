@@ -31,7 +31,7 @@ export default function Slide07({ index, total }: { index: number; total: number
         style={{ position: "absolute", left: 120, top: 240, width: 820, zIndex: 10 }}
       >
         <div className="slide-kicker" style={{ color: "#F26A21" }}>
-          The Nurse · Kilifi Sub-County Hospital
+          The Nurse · Naivasha Hospital
         </div>
         <h1
           style={{

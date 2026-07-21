@@ -1,8 +1,5 @@
 import { SlideLayout, AccentBar } from "../SlideLayout";
 import { team } from "../content";
-import founderImg from "@/assets/deck/founder.png";
-import ctoImg from "@/assets/deck/cto.png";
-import cmoImg from "@/assets/deck/cmo.png";
 
 export const meta = {
   objective: "Show obsession, not credentials. Investors fund obsessed founders.",
@@ -10,14 +7,12 @@ export const meta = {
   emotionalGoal: "Trust. Obsession. These people will not quit.",
 };
 
-const PORTRAITS = [founderImg, ctoImg, cmoImg];
-
-function Portrait({ image, initials }: { image?: string; initials: string }) {
+function Portrait({ initials }: { initials: string }) {
   return (
     <div
       style={{
-        width: 160,
-        height: 160,
+        width: 140,
+        height: 140,
         borderRadius: 999,
         background: "linear-gradient(145deg, #1F7A3A 0%, #8BC34A 100%)",
         display: "flex",
@@ -25,24 +20,16 @@ function Portrait({ image, initials }: { image?: string; initials: string }) {
         justifyContent: "center",
         fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
         fontWeight: 700,
-        fontSize: 56,
+        fontSize: 48,
         color: "white",
         letterSpacing: "-0.03em",
-        boxShadow: "0 20px 60px -20px rgba(20,90,42,0.35)",
+        boxShadow: "0 15px 40px -15px rgba(20,90,42,0.35)",
         border: "4px solid white",
         flexShrink: 0,
         overflow: "hidden",
       }}
     >
-      {image ? (
-        <img
-          src={image}
-          alt={initials}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      ) : (
-        initials
-      )}
+      {initials}
     </div>
   );
 }
@@ -54,9 +41,7 @@ export default function Slide12({ index, total }: { index: number; total: number
       <div className="slide-enter" style={{ position: "absolute", top: 140, left: 120, right: 120, zIndex: 10 }}>
         <div className="slide-kicker" style={{ color: "#F26A21" }}>The Team</div>
         <h1 className="slide-title" style={{ marginTop: 24, color: "#145A2A", maxWidth: 1200 }}>
-          Built{" "}
-          <span style={{ color: "#F26A21" }}>alongside</span>{" "}
-          healthcare workers — not for them.
+          Built <span style={{ color: "#F26A21" }}>alongside</span> healthcare workers — not for them.
         </h1>
         <AccentBar width={110} className="mt-8" />
       </div>
@@ -68,9 +53,9 @@ export default function Slide12({ index, total }: { index: number; total: number
           position: "absolute",
           left: 120,
           right: 120,
-          bottom: 120,
+          bottom: 110,
           display: "flex",
-          gap: 60,
+          gap: 32,
           zIndex: 10,
         }}
       >
@@ -81,7 +66,7 @@ export default function Slide12({ index, total }: { index: number; total: number
               flex: 1,
               background: "white",
               borderRadius: 24,
-              padding: "36px 36px",
+              padding: "32px 24px",
               boxShadow: "0 8px 40px -10px rgba(20,90,42,0.12)",
               border: "1px solid rgba(20,90,42,0.08)",
               display: "flex",
@@ -89,9 +74,8 @@ export default function Slide12({ index, total }: { index: number; total: number
               gap: 20,
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, textAlign: "center" }}>
               <Portrait
-                image={PORTRAITS[i]}
                 initials={m.name.replace(/[\[\]]/g, "").split(" ").map((w) => w[0]).slice(0, 2).join("")}
               />
               <div>
@@ -99,7 +83,7 @@ export default function Slide12({ index, total }: { index: number; total: number
                   style={{
                     fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
                     fontWeight: 700,
-                    fontSize: 24,
+                    fontSize: 20,
                     color: "#145A2A",
                     lineHeight: 1.2,
                   }}
@@ -111,8 +95,8 @@ export default function Slide12({ index, total }: { index: number; total: number
                     marginTop: 6,
                     fontFamily: "Poppins, ui-sans-serif, system-ui, sans-serif",
                     fontWeight: 600,
-                    fontSize: 13,
-                    letterSpacing: "0.15em",
+                    fontSize: 12,
+                    letterSpacing: "0.08em",
                     textTransform: "uppercase",
                     color: "#F26A21",
                   }}
@@ -126,11 +110,11 @@ export default function Slide12({ index, total }: { index: number; total: number
             <div
               style={{
                 borderLeft: "3px solid #F26A21",
-                paddingLeft: 18,
+                paddingLeft: 14,
                 fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
-                fontSize: 17,
+                fontSize: 15,
                 color: "rgba(26,26,26,0.7)",
-                lineHeight: 1.6,
+                lineHeight: 1.5,
               }}
             >
               {m.credential}

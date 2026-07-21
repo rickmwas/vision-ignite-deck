@@ -84,7 +84,7 @@ export default function Slide07WhyNow({ index, total }: { index: number; total: 
         {[
           { name: "Mama Akinyi", week: "32 wks", status: "Visited", flag: false },
           { name: "Mama Ochieng", week: "28 wks", status: "Visited", flag: false },
-          { name: "Mama Wanjiku", week: "36 wks", status: "⚠ BP elevated", flag: true },
+          { name: "Mama Wanjiku", week: "36 wks", status: "BP elevated", flag: true },
         ].map((r, i) => (
           <div
             key={i}

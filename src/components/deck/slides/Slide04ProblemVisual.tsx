@@ -60,7 +60,7 @@ export default function Slide04({ index, total }: { index: number; total: number
         style={{ position: "absolute", top: 140, left: 120, zIndex: 10 }}
       >
         <div className="slide-kicker" style={{ color: "#F26A21" }}>
-          A True Story · Kilifi County
+          A True Story · Nakuru County
         </div>
         <h1 className="slide-title" style={{ marginTop: 24, color: "#145A2A" }}>
           Mama Akinyi's journey.

@@ -89,7 +89,7 @@ export default function Slide08({ index, total }: { index: number; total: number
                 }}
               >
                 <p style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 15, color: "rgba(255,255,255,0.85)", margin: 0, lineHeight: 1.5 }}>
-                  <span style={{ color: "#8BC34A", fontWeight: 600 }}>TotoAfya:</span> Mama Akinyi, ANC visit kesho 10am — Kilifi Sub-County Clinic. CHV Grace atakuwa nawe asubuhi. 💚
+                  <span style={{ color: "#8BC34A", fontWeight: 600 }}>TotoAfya:</span> Mama Akinyi, ANC visit kesho 10am — Naivasha Hospital. CHV Grace atakuwa nawe asubuhi.
                 </p>
               </div>
               <div style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 6, paddingLeft: 6 }}>
@@ -107,7 +107,7 @@ export default function Slide08({ index, total }: { index: number; total: number
                 }}
               >
                 <p style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 15, color: "white", margin: 0, lineHeight: 1.5 }}>
-                  Sawa, nitakuwepo 👍
+                  Sawa, nitakuwepo
                 </p>
               </div>
               <div style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 12, color: "rgba(255,255,255,0.3)", marginTop: 6, textAlign: "right", paddingRight: 6 }}>
@@ -125,7 +125,7 @@ export default function Slide08({ index, total }: { index: number; total: number
                 }}
               >
                 <p style={{ fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif", fontSize: 15, color: "rgba(255,255,255,0.85)", margin: 0, lineHeight: 1.5 }}>
-                  ✅ Ahsante! CHV Grace atawasiliana nawe asubuhi.
+                  Ahsante! CHV Grace atawasiliana nawe asubuhi.
                 </p>
               </div>
             </div>

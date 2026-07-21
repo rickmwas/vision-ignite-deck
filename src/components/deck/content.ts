@@ -7,7 +7,7 @@ export const deckMeta = {
   brand: "TotoAfya Digital",
   tagline: "The Digital Backbone of Maternal Care in Africa",
   audience: "KeNIA · Investors · Accelerators · Grant Committees",
-  presenter: "Rick Mwas · Founder & CEO",
+  presenter: "Erick Mwangi · Founder & Technical Development Lead",
   date: "2026",
   askAmount: "KES 20,000,000",
   askUse: "to scale our validated pilot to 5 counties, onboarding 2,500+ mothers in the next 12 months.",
@@ -16,12 +16,12 @@ export const deckMeta = {
 // Side-by-side comparison figures for Traction (Pilot Actuals vs. 12-Month Projections)
 export const traction = {
   actuals: {
-    mothers: "150+",
+    mothers: "60",
     chvs: "10",
     facilities: "2",
-    counties: "2",
+    counties: "1",
     label: "Active Pilot Results",
-    footnote: "Machakos & Kiambu counties, verified offline sync logs.",
+    footnote: "Nakuru County (Naivasha & Maai Mahiu), in talks for a supervised pilot.",
   },
   projections: {
     mothers: "1,200+",
@@ -35,19 +35,24 @@ export const traction = {
 
 export const team = [
   {
-    name: "Rick Mwas",
-    role: "Founder & CEO",
-    credential: "Lead product developer. Spent months studying maternal workflows inside Kiambu clinics — sitting with nurses, walking with CHVs, learning what paper registers miss.",
+    name: "Erick Mwangi",
+    role: "Founder & Technical Dev Lead",
+    credential: "Lead product developer. Spent months studying maternal workflows inside Nakuru clinics — sitting with nurses, walking with CHVs, learning what paper registers miss.",
   },
   {
-    name: "Ken Omondi",
-    role: "CTO",
-    credential: "Software Architect. Built offline-first mobile sync engines in low-connectivity rural environments. We design systems for reality, not best-case scenarios.",
+    name: "Michael Omondi",
+    role: "Systems Research",
+    credential: "Research on current systems. Evaluated existing paper records and digital systems in public clinics, mapping data entry bottlenecks and synchronization failures.",
   },
   {
-    name: "Dr. Beatrice Kemboi",
-    role: "Chief Medical Officer",
-    credential: "OB-GYN & maternal health advocate. Has seen preventable birth complications go unnoticed due to fragmented records. Leading clinical logic validation.",
+    name: "Hyacinth Onchangu",
+    role: "Clinical Workflows Research",
+    credential: "Research on clinical workflows. Documented nurse routines and patient pathways to ensure TotoAfya matches clinical reality and guidelines.",
+  },
+  {
+    name: "Zach Njogu",
+    role: "Chief Nurse & Validator",
+    credential: "Chief Nurse at Naivasha Hospital / Maai Mahiu Hospital. Validating TotoAfya's interface and logic against real clinical workflows and daily workloads.",
   },
 ];
 

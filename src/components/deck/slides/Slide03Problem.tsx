@@ -1,5 +1,6 @@
 import { SlideLayout } from "../SlideLayout";
 import moh216Img from "@/assets/deck/moh216.png";
+import { Baby, ClipboardList, Hospital, AlertTriangle } from "lucide-react";
 
 export const meta = {
   objective: "Show fragmentation. Let the audience visually grasp the data silos between Mother, CHV, and Clinic.",
@@ -49,7 +50,7 @@ export default function Slide03({ index, total }: { index: number; total: number
         >
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontSize: 32 }}>🤰</span>
+              <span style={{ color: "#145A2A", display: "inline-flex", alignItems: "center" }}><Baby size={32} /></span>
               <span
                 style={{
                   fontFamily: "Inter, sans-serif",
@@ -109,7 +110,7 @@ export default function Slide03({ index, total }: { index: number; total: number
               width: 100,
             }}
           >
-            <div style={{ fontSize: 18, marginBottom: 2 }}>⚠️</div>
+            <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#C53030", marginBottom: 4 }}><AlertTriangle size={18} /></div>
             <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: 11, color: "#C53030", textTransform: "uppercase", letterSpacing: "0.05em" }}>Silo Gap</div>
             <div style={{ fontFamily: "Inter, sans-serif", fontSize: 10, color: "rgba(26,26,26,0.5)", marginTop: 2, lineHeight: 1.2 }}>No Home-to-Community Sync</div>
           </div>
@@ -133,7 +134,7 @@ export default function Slide03({ index, total }: { index: number; total: number
         >
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontSize: 32 }}>📋</span>
+              <span style={{ color: "#145A2A", display: "inline-flex", alignItems: "center" }}><ClipboardList size={32} /></span>
               <span
                 style={{
                   fontFamily: "Inter, sans-serif",
@@ -193,7 +194,7 @@ export default function Slide03({ index, total }: { index: number; total: number
               width: 100,
             }}
           >
-            <div style={{ fontSize: 18, marginBottom: 2 }}>⚠️</div>
+            <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", color: "#C53030", marginBottom: 4 }}><AlertTriangle size={18} /></div>
             <div style={{ fontFamily: "Poppins, sans-serif", fontWeight: 800, fontSize: 11, color: "#C53030", textTransform: "uppercase", letterSpacing: "0.05em" }}>Silo Gap</div>
             <div style={{ fontFamily: "Inter, sans-serif", fontSize: 10, color: "rgba(26,26,26,0.5)", marginTop: 2, lineHeight: 1.2 }}>No Community-to-Clinic Sync</div>
           </div>
@@ -217,7 +218,7 @@ export default function Slide03({ index, total }: { index: number; total: number
         >
           <div>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <span style={{ fontSize: 32 }}>🏥</span>
+              <span style={{ color: "#145A2A", display: "inline-flex", alignItems: "center" }}><Hospital size={32} /></span>
               <span
                 style={{
                   fontFamily: "Inter, sans-serif",

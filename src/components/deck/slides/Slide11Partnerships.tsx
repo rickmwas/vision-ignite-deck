@@ -1,4 +1,5 @@
 import { SlideLayout, AccentBar } from "../SlideLayout";
+import { Landmark, Handshake, Smartphone, Heart } from "lucide-react";
 
 export const meta = {
   objective: "Present our multi-stakeholder partnership strategy to demonstrate scalable distribution and integration.",
@@ -8,25 +9,25 @@ export const meta = {
 
 const PARTNERS = [
   {
-    icon: "🏛️",
+    icon: Landmark,
     title: "County Health Departments & MoH",
     role: "Integration Rights & Facility Access",
     details: "Provides formal authority to operate inside public clinics, integration rights with KenyaEMR/DHIS2, and endorsement of clinical workflows to build trust with nurses.",
   },
   {
-    icon: "🤝",
+    icon: Handshake,
     title: "Community Health Units (CHVs)",
     role: "On-the-ground Household Enrollment",
     details: "Leveraging trained Community Health Volunteers under county jurisdiction to handle grassroots registration, home visits, and localized health education.",
   },
   {
-    icon: "📱",
+    icon: Smartphone,
     title: "Telecom Partners (Safaricom & Airtel)",
     role: "Zero-Rated PWA & Infrastructure",
     details: "Pending discussions to whitelist PWA domain (free data access for mothers/CHVs) and establish discounted bulk SMS bundles for ANC & immunization reminders.",
   },
   {
-    icon: "🏥",
+    icon: Heart,
     title: "Insurance Partners (e.g., Britam)",
     role: "Micro-Insurance & Commercial Channels",
     details: "Aligning digital logs with maternal coverage programs (e.g., Lea Mama) to reduce risk claims by tracking antenatal visit compliance.",
@@ -76,15 +77,17 @@ export default function Slide11Partnerships({ index, total }: { index: number; t
             {/* Icon */}
             <div
               style={{
-                fontSize: 36,
                 background: "rgba(31,122,58,0.06)",
+                color: "#1F7A3A",
                 padding: 12,
                 borderRadius: 16,
-                lineHeight: 1.2,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
                 flexShrink: 0,
               }}
             >
-              {p.icon}
+              <p.icon size={24} />
             </div>
 
             {/* Content */}
